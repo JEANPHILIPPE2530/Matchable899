@@ -15,20 +15,20 @@
                     <li>
                         <a href="#">
                             <i class='bx bx-search-alt-2'></i>
-                            <input type="search" placeholder="Search..." name="Search Bar" class="search">                    
+                            <input type="search" placeholder="Search..." name="Search Bar" class="search">
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            <i class='bx bxs-grid-alt' ></i>
-                            <span class="links_name">Dashboard</span>
-                        </a>
+                      <%= link_to user_path(@user) do %>
+                        <i class='bx bxs-grid-alt' ></i>
+                        <span class="links_name">Dashboard</span>
+                      <% end %>
                     </li>
                     <li>
-                        <a href="#">
-                            <i class='bx bxs-chat'></i>
-                            <span class="links_name">Messages</span>
-                        </a>
+                      <a href="#">
+                        <i class='bx bxs-chat'></i>
+                        <span class="links_name">Messages</span>
+                      </a>
                     </li>
                     <li>
                         <a href="#">
@@ -37,10 +37,11 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            <i class='bx bxs-user'></i>
-                            <span class="links_name">User Profile</span>
-                        </a>
+                      <% if user. %>
+                      <%= link_to developer_path(@user) do %>
+                        <i class='bx bxs-user'></i>
+                        <span class="links_name">User Profile</span>
+                      <% end %>
                     </li>
                 </ul>
                 <%# <div class="profile_content">
