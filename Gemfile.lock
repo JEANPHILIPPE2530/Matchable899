@@ -244,7 +244,8 @@ GEM
     zeitwerk (2.5.4)
 
 PLATFORMS
-  arm64-darwin-21
+  arm64-darwin-21te
+  x86_64-linux
 
 DEPENDENCIES
   autoprefixer-rails (= 10.2.5)
