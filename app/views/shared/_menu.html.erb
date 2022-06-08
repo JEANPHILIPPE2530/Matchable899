@@ -37,11 +37,20 @@
                         </a>
                     </li>
                     <li>
-                      <% if @user. %>
-                      <%= link_to developer_path(@user) do %>
-                        <i class='bx bxs-user'></i>
-                        <span class="links_name">User Profile</span>
+                      <% if @user.role == "developer" %>
+                        <%= link_to developer_path(@user) do %>
+                          <i class='bx bxs-user'></i>
+                          <span class="links_name">User Profile</span>
+                        <% end %>
+                      <% elsif @user.role == "company" %>
+                        <%= link_to company_path(@user) do %>
+                          <i class='bx bxs-user'></i>
+                          <span class="links_name">User Profile</span>
+                        <% end %>
                       <% end %>
+                    </li>
+                    <li>
+                      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
                     </li>
                 </ul>
                 <%# <div class="profile_content">
