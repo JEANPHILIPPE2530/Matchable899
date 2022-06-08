@@ -1,10 +1,10 @@
-<ul class="nav justify-content-center bg-success w-100 fixed-bottom d-flex justify-content-around">
+<ul class="nav justify-content-center bg-success fixed-bottom d-flex justify-content-around mw-100">
    <!-- globe -->
-   <a href="#">
-   <li class="nav-item p-2 ">
-    <i class='bx bx-globe' style="font-size: 30px;"  ></i>
-      </li>
-  </a>
+   <%= link_to root_path do %>
+    <li class="nav-item p-2 ">
+      <i class='bx bx-globe' style="font-size: 30px;"  ></i>
+    </li>
+  <% end %>
   <!-- heart -->
   <a href="#">
       <li class="nav-item p-2 ">
@@ -18,9 +18,9 @@
       </li>
   </a>
   <!-- user -->
-  <a href="#">
-      <li class="nav-item p-2 ">
-        <i class='bx bx-user-circle' style="font-size: 30px;"></i>
-      </li>
-  </a>
-  </ul> 
+  <%= link_to user_path(@user) do %>
+    <li class="nav-item p-2 ">
+      <i class='bx bx-user-circle' style="font-size: 30px;"></i>
+    </li>
+  <% end %>
+  </ul>
