@@ -18,7 +18,7 @@ class MatchesController < ApplicationController
   end
 
 # ================================================================================================
-  def approveDeveloper 
+  def approveDeveloper
     user_id = params[:id]
 
       # swipe right feature
@@ -35,7 +35,7 @@ class MatchesController < ApplicationController
           end
   end
 
-  def approveCompany 
+  def approveCompany
     user_id = params[:id]
 
     # swipe right feature
@@ -54,7 +54,7 @@ class MatchesController < ApplicationController
 # ================================================================================================
   # def decline
   #     # swipe left feature
-      
+
   # end
 
   def profile
@@ -69,6 +69,7 @@ class MatchesController < ApplicationController
 
       if @profile.present?
           # need to render some code for messages
+      end
   end
 
 # to continue on this
