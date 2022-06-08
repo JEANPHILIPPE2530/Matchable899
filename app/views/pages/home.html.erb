@@ -1,3 +1,7 @@
 <%= render 'shared/phonelayout' %>
-<%= render 'shared/menu' %>
-<%= render 'shared/card' %>
+<% if current_user.role.nil? %>
+  <%= render 'choice' %>
+<% else %>
+  <%= render 'shared/menu' %>
+  <%= render 'shared/card' %>
+<% end %>
