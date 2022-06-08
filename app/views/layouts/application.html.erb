@@ -21,7 +21,9 @@
   <body>
     <%# <%= render 'shared/navbar' %>
     <%# <%= render 'shared/flashes' %>
-    <%= render 'shared/navbar_down' %>
+    <% if user_signed_in? %>
+      <%= render 'shared/navbar_down' %>
+    <% end %>
 
     <%= yield %>
   </body>
