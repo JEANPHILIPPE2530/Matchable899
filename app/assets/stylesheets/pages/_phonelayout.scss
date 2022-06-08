@@ -9,7 +9,7 @@
 body {
     height: 100%;
     position: relative;
-    display: flex;
+    // display: flex;
     align-items: center;
     justify-content: center;
     background: url(https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cGFydHl8ZW58MHx8MHx8&auto=format&fit=crop&w=1000&q=60);
@@ -19,7 +19,7 @@ body {
 
 .phone{
     height: 896px;
-    width: 414px;
+    width: 100%;
     background: rgba(244, 218, 180, 0.1);
     backdrop-filter: blur(60px);
     border-radius: 15px;
