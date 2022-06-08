@@ -6,6 +6,5 @@ class Company < ApplicationRecord
   validates :description, presence: true, length: { minimum: 25 }
   validates :address, presence: true
   validates :website, presence: true
-  validates :zoom, presence: true
   validates :phone_number, presence: true
 end
