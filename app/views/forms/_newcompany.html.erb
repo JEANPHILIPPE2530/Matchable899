@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Build Your Company Profile</h1>
+  <%= simple_form_for @company do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :address %>
+    <%= f.input :phone_number %>
+    <%= f.input :website %>
+    <%= f.input :zoom %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
+</div>
