@@ -22,6 +22,7 @@
     backdrop-filter: blur(5px);
     overflow: hidden;
     margin: 30px auto;
+    top: 160px;
 
 
     p {
@@ -36,11 +37,13 @@
     text-decoration: none;
 
 }
-h1 {
+h2 {
     font-size: 5em;
     color: #fff;
     display: flex;
-    justify-content: center;
+    text-align: center;
+    position:absolute;
+    padding-top: 60px;
 }
 
 .log_out {
@@ -58,6 +61,7 @@ h1 {
     margin-bottom: 10px;
     
 }
-.logout a {
+.log_out a {
     text-decoration: none;
+    color: #FFF;
 }
