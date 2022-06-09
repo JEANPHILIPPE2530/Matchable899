@@ -7,9 +7,10 @@
     <%# <%= f.input :address %>
 
 
-<%= f.input :skills, as: :check_boxes, collection: Developer::SKILLS, prompt: "Skills", label: false, wrapper: :horizontal_collection_inline %>
+    <%= f.input :skills, as: :check_boxes, collection: Developer::SKILLS, prompt: "Skills", label: false, wrapper: :horizontal_collection_inline %>
 
-     <h2>Contact Details</h2>
+
+     <div class= "subtitle">Contact Details</div>
       <%= f.input :phone_number, placeholder: "Phone number", label: false %>
       <%= f.input :website, placeholder: "Website", label: false %>
       <%= f.input :zoom, placeholder: "Zoom", label: false %>

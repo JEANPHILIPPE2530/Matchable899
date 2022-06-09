@@ -1,17 +1,28 @@
 .profile-container {
   padding: 16px;
-  justify-content: center;
+  // justify-content: center;
+  max-width: 390px;
+  // text-align: center;
+  width: 100%;
+  margin: auto;
   h1 {
     font-size: 1.5em;
     display: flex;
     justify-content: center;
     padding: 8px;
+
   }
   h2 {
     color: white;
   }
+
 }
 
+.subtitle {
+  font-size: 1em;
+  color: white;
+  padding-bottom: 10px;
+}
 .form-control {
   text-align: start;
   border-radius: 12px;
@@ -45,4 +56,23 @@
   border-radius: 50%;
   background-image: url("add-photo.png");
   background-size: contain;
+}
+
+// check-boxes
+.form-check-label {
+  border-radius: 12px;
+  background-color: lightgrey;
+  opacity: 0.8;
+  padding: 4px;
+  margin: 5px;
+  font-size: 14px;
+}
+
+.form-check-input {
+  display: none!important;
+}
+
+.form-check-input:checked + .form-check-label {
+  color: white;
+  background-color: blue;
 }
