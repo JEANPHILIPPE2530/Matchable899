@@ -19,9 +19,30 @@
   opacity: 0.8;
 }
 
+.file {
+  display: flex;
+  justify-content: center;
+}
+
 .profile-save-button {
   width: 100%;
   background-color: white;
   border-radius: 24px;
   margin-bottom: 50px;
+}
+
+#company_photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-image: url("add-photo.png");
+  background-size: contain;
+}
+
+#developer_photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-image: url("add-photo.png");
+  background-size: contain;
 }
