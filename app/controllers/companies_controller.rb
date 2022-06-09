@@ -11,11 +11,10 @@ class CompaniesController < ApplicationController
           OR developers.last_name @@ :query \
           OR developers.skills @@ :query \
         "
-        @companies = Company.joins(:developer).where(sql_query, query: "%#{params[:query]}%")
-      else
-        @companies = Company.all
-      end
-    end
+          @companies = Company.joins(:developer).where(sql_query, query: "%#{params[:query]}%")
+        else
+          @companies = Company.all
+        end
   end
 
   def show

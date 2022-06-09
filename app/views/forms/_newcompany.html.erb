@@ -1,12 +1,15 @@
 <div class="profile-container">
   <h1>Build Your Company Profile</h1>
   <%# <%= cl_image_tag company.photo.key, height: 100, border-radius: 50% %>
+    <div class="photo">
+      <%= image_tag "add-photo.png" %>
+    </div>
   <%= simple_form_for @company do |f| %>
     <%= f.input :photo, as: :file, label: false %>
     <%= f.input :name, placeholder: "Company Name", label: false %>
     <%= f.input :description, as: :text, placeholder: "Tell us more about your company...", label: false %>
     <%= f.input :address, placeholder: "Address", label: false %>
-    <h2>Contact Details</h2>
+    <h1>Contact Details</h1>
     <%= f.input :phone_number, placeholder: "Phone Number", label: false %>
     <%= f.input :website, placeholder: "Website", label: false %>
     <%= f.input :zoom, placeholder: "Zoom", label: false %>
