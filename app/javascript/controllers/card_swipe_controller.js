@@ -11,7 +11,7 @@ profiles.forEach(setupDragAndDrop);
 
 function setupDragAndDrop(profile) {
     const hammertime = new Hammer(profile);
-
+    
     hammertime.on('pan', function (cardProfile) {
         profile.classList.remove('profile--back');
         let posX = cardProfile.deltaX;
