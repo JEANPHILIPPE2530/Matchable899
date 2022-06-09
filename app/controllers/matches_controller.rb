@@ -1,6 +1,18 @@
 class MatchesController < ApplicationController
   def index
-    @match = Match.all
+    if params[:query].present?
+        sql_query = " \
+         developers.first_name @@ :query \
+        OR developers.last_name @@ :query \
+      "
+      sql_query_company = " \
+         companies.name @@ :query \
+      "
+      @matches = Developer.where(sql_query, query: "%#{params[:query]}%")
+      @matches_company = Company.where(sql_query_company, query: "%#{params[:query]}%")
+    else
+      @matches = Developer.all
+    end
   end
 
   # JP
