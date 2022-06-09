@@ -1,5 +1,7 @@
 <div class="phone">
-<%= cl_image_tag @company.photo.key %>
+<% if @company.photo.attached? %>
+  <%= cl_image_tag @company.photo.key, height: 500 %>
+<% end %>
 <br>
 <%= @company.name %>
 <br>

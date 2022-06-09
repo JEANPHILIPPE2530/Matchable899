@@ -1,52 +1,65 @@
 class MatchesController < ApplicationController
   def index
-    @match = Match.all
+    if params[:query].present?
+        sql_query = " \
+         developers.first_name @@ :query \
+        OR developers.last_name @@ :query \
+      "
+      sql_query_company = " \
+         companies.name @@ :query \
+      "
+      @matches = Developer.where(sql_query, query: "%#{params[:query]}%")
+      @matches_company = Company.where(sql_query_company, query: "%#{params[:query]}%")
+    else
+      @matches = Developer.all
+    end
   end
 
   # JP
   # --------- Start
   def browse
-    liked_user_ids = Like.where(user_id: current_user.id).map(&:liked_user_id)
-    liked_user_id << current_user.id
+    liked_user_ids = Match.where(developer_id: current_user.id).map(&:liked_user_id)
     @user = User.where.not(id: liked_user_ids)
   end
 
-  def myMatch
+  def my_match
       @matches = current_user.matches
       # +create a vue to view all matches and render @matches each do
-      @users = User.where.not(id: liked_user_ids)
+      @users = User.where(id: liked_user_ids)
   end
 
 # ================================================================================================
-  def approveDeveloper
-    user_id = params[:id]
+  def approve_developer
+    # user_id = params[:id]
 
       # swipe right feature
           # need to link the JS code hear
       # create like for user
-          new_like = Like.new[liked_user_id: user_id_developer]
+          new_like = Match.new(developer_id:current_user.id)
 
+          # @offer = params[:id]
+          # @offer.company_id
           if new_like.save
               # check if user already likes us back
-              exising_like = like.where(user_id: user_id_developer, liked_user_id: current_user_id).count
-              @mutual_like = existing_like > 0
+              existing_like = Match.where(developer_id:current_user.id, company_id: @offer.company_id).any?  #any?
+              @mutual_like = existing_like == true
           else
 
           end
   end
 
-  def approveCompany
+  def approve_company
     user_id = params[:id]
 
     # swipe right feature
         # need to link the JS code hear
     # create like for user
-        new_like = Like.new[liked_user_id: user_id]
+        new_like = Match.new[liked_user_id: user_id]
 
         if new_like.save
             # check if user already likes us back
-            exising_like = like.where(user_id: user_id, liked_user_id: current_user_id).count
-            @mutual_like = existing_like > 0
+            existing_like = Match.where(user_id: user_id, liked_user_id: current_user_id).any?
+            @mutual_like = existing_like == true
         else
 
         end
@@ -54,7 +67,7 @@ class MatchesController < ApplicationController
 # ================================================================================================
   # def decline
   #     # swipe left feature
-
+    # @user= User.where.not(id: liked_user_ids)
   # end
 
   def profile
@@ -64,7 +77,7 @@ class MatchesController < ApplicationController
   def message
       message_id = params[:id]
       @profile = User.find(id)
-      likes = Like.where(user_id: user.id, liked_user_id: id)
+      likes = Match.where(user_id: user.id, liked_user_id: id)
       @match = likes.first if likes.size > 0
 
       if @profile.present?

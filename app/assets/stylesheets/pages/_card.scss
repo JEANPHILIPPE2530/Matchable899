@@ -14,29 +14,26 @@
 
 /* PUT CARDS ONE ON TOP OF EACH OTHER */
 main {
-    width: 300px;
     max-width: 90%;
 }
 
 .profiles {
     width:100%;
-    position: relative;
     height:450px;
 }
 
 .profile {
-max-width: 300px;
-/* margin: auto;
+max-width: 360px;
+margin: auto;
 position: relative;
-overflow-x: hidden; */
+overflow-x: hidden; 
 background-color: white;
 border-radius: 12px;
 box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2);
 
 position: absolute;
 /* left:0px; */
-top:150px;
-width:100%;
+top: 150px;
 overflow: hidden;
 cursor:pointer;
 -webkit-touch-callout: none; /* iOS Safari */
@@ -46,8 +43,8 @@ cursor:pointer;
       -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                 supported by Chrome, Edge, Opera and Firefox */
-    left: 120px;
-    top: 200px;
+    left: 55px;
+    top: 260px;
 }
 
 /* PROFILE CARD CONTENT */
@@ -114,6 +111,7 @@ letter-spacing: 1.5px;
 margin: 0;
 left: 50%;
 transform: translateX(-50%) translateY(-7px);
+color: #282d2f;
 }
 
 .card-frame {
@@ -201,14 +199,14 @@ fill: #637faa;
 .profile--matching::after, .profile--nexting::after {
     content: 'MATCH';
     font-weight: bold;
-    font-size: 28px;
+    font-size: 20px;
     padding:8px 12px;
     border:solid 2px var(--green);
     color:var(--green);
     background:var(--light-grey);
     position:absolute;
     top:200px;
-    right:70px;
+    right: 85px;
     border-radius: 4px;
     /* transform:rotate(24deg); */
     opacity: 45%;
@@ -216,11 +214,10 @@ fill: #637faa;
 
 .profile--nexting::after {
     content:'NEXT';
-    border:solid 2px var(--red);
-    color:var(--red);
-    top:200px;
-    left:85px;
-    width: 75px;
+    border: solid 2px var(--red);
+    color: var(--red);
+    top: 200px;
+    left: 85px;
 }
 
 /* end of card */
