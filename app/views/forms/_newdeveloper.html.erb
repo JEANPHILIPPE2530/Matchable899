@@ -1,22 +1,22 @@
-  <div class="developer-container">
+  <div class="profile-container">
     <h1> Build Your Profile</h1>
-    <div class='profile-user'>
+<%#     <div class='profile-user'>
       <i class='bx bx-user-circle ' style="font-size: 100px;"></i>
-    </div>
+    </div> %>
     <%# <p><strong>Biography</strong></p> %>
     <%= simple_form_for(@developer) do |f| %>
-    <%= f.input :biography, input_html: { class: 'special' , placeholder: "Biography"} %>
+    <%= f.input :biography, as: :text, placeholder: "Tell us more about you...", label: false %>
     <%# <%= f.input :address %>
 
 
-<%= f.input :skills, as: :check_boxes, collection: Developer::SKILLS, prompt: "Skills", wrapper: :horizontal_collection_inline %>
+<%= f.input :skills, as: :check_boxes, collection: Developer::SKILLS, prompt: "Skills", label: false, wrapper: :horizontal_collection_inline %>
 
-     <p><strong>Contact Details</strong></p>
-      <%= f.input :phone_number, input_html: { class: 'special', placeholder: "Phone Number"   } %>
-      <%= f.input :website, input_html: { class: 'special', placeholder: "Website" } %>
-      <%= f.input :zoom, input_html: { class: 'special', placeholder: "Zoom" } %>
+     <h2>Contact Details</h2>
+      <%= f.input :phone_number, placeholder: "Phone number", label: false %>
+      <%= f.input :website, placeholder: "Website", label: false %>
+      <%= f.input :zoom, placeholder: "Zoom", label: false %>
     <%# <%= f.input :avatar, as: :file, input_html: { accept: User::AVATAR } %>
 
-    <%= f.button :submit, "Save", id: "developer-button" %>
+    <%= f.button :submit, "Save", class: "profile-save-button" %>
     <% end %>
   </div>
