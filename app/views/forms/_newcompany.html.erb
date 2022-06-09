@@ -4,7 +4,7 @@
     <div class="photo">
       <%= image_tag "add-photo.png" %>
     </div>
-  <%= simple_form_for @company do |f| %>
+  <%= simple_form_for @company, url: companies_path, method: :post do |f| %>
     <%= f.input :photo, as: :file, label: false %>
     <%= f.input :name, placeholder: "Company Name", label: false %>
     <%= f.input :description, as: :text, placeholder: "Tell us more about your company...", label: false %>
