@@ -1,5 +1,4 @@
 class DevelopersController < ApplicationController
-  before_action :set_user
   before_action :set_developer, only: %i[show]
 
   def show
@@ -21,10 +20,6 @@ class DevelopersController < ApplicationController
   end
 
   private
-
-  def set_user
-    @user = current_user
-  end
 
   def developer_params
     params.require(:developer).permit(:first_name, :last_name, :biography, :address, :phone_number, :website, :zoom, :github, :user_id, skills: [])
