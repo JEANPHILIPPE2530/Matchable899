@@ -1,7 +1,9 @@
 class Company < ApplicationRecord
   belongs_to :user
   has_many :offers
+  has_one_attached :photo
 
+  validates :photo, presence: true
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true, length: { minimum: 25 }
   validates :address, presence: true
