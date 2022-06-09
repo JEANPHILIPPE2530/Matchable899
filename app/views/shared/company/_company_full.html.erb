@@ -2,14 +2,14 @@
     <div class="company-header">
         <div class="company-cover" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png')"></div>
         <img class="company-avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png" alt="avatar">
-        <h1 class="company-fullname">Google</h1>
+        <h1 class="company-fullname"><%= @company.name %></h1>
         <h2 class="company-jobtitle">A big company.</h2>
     </div>
     <div class="company-frame">
         <div class="company-section action" id="about">
             <div class="company-content">
                 <div class="company-subtitle">ABOUT</div>
-                <p class="company-desc">Google LLC (/ˈɡuːɡəl/ (listen)) is an American multinational technology company that focuses on artificial intelligence,[10] search engine technology, online advertising, cloud computing, computer software, quantum computing, e-commerce, and consumer electronics. It has been referred to as the "most powerful company in the world" and one of the world's most valuable brands due to its market dominance, data collection, and technological advantages in the area of artificial intelligence.</p>
+                <p class="company-desc"><%= @company.description %></p>
             </div>
             <div class="company-icon">
                 <a href="#">Tech</a>
