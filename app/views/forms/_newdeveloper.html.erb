@@ -1,20 +1,17 @@
   <div class="profile-container">
     <h1> Build Your Profile</h1>
-
+    <div class="photo">
+      <%= image_tag "add-photo.png" %>
+    </div>
     <%= simple_form_for(@developer) do |f| %>
     <%= f.input :photo, as: :file, label: false %>
     <%= f.input :biography, as: :text, placeholder: "Tell us more about you...", label: false %>
-    <%# <%= f.input :address %>
-
-
-<%= f.input :skills, as: :check_boxes, collection: Developer::SKILLS, prompt: "Skills", label: false, wrapper: :horizontal_collection_inline %>
-
-     <h2>Contact Details</h2>
-      <%= f.input :phone_number, placeholder: "Phone number", label: false %>
-      <%= f.input :website, placeholder: "Website", label: false %>
-      <%= f.input :zoom, placeholder: "Zoom", label: false %>
-    <%# <%= f.input :avatar, as: :file, input_html: { accept: User::AVATAR } %>
-
+    <%= f.input :address, placeholder: "Address", label: false %>
+    <%= f.input :skills, as: :check_boxes, collection: Developer::SKILLS, prompt: "Skills", label: false, wrapper: :horizontal_collection_inline %>
+    <h1>Contact Details</h1>
+    <%= f.input :phone_number, placeholder: "Phone number", label: false %>
+    <%= f.input :website, placeholder: "Website", label: false %>
+    <%= f.input :zoom, placeholder: "Zoom", label: false %>
     <%= f.button :submit, "Save", class: "profile-save-button" %>
     <% end %>
   </div>

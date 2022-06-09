@@ -6,22 +6,20 @@
     display: flex;
     justify-content: center;
     padding: 8px;
-  }
-  h2 {
     color: white;
   }
 }
 
 .form-control {
   text-align: start;
+  justify-content: center;
   border-radius: 12px;
   background-color: lightgrey;
   opacity: 0.8;
 }
 
 .file {
-  display: flex;
-  justify-content: center;
+  width: 55%;
 }
 
 .profile-save-button {
@@ -31,18 +29,7 @@
   margin-bottom: 50px;
 }
 
-#company_photo {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background-image: url("add-photo.png");
-  background-size: contain;
-}
-
-#developer_photo {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background-image: url("add-photo.png");
-  background-size: contain;
-}
+.photo {
+  display: flex;
+  opacity: 0.8;
+  justify-content: center;}
