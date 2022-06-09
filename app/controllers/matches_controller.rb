@@ -1,6 +1,6 @@
 class MatchesController < ApplicationController
-  def show
-    @match = Match.find(params[:id])
+  def index
+    @match = Match.all
   end
 
   # JP
