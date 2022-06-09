@@ -1,10 +1,8 @@
   <div class="profile-container">
     <h1> Build Your Profile</h1>
-<%#     <div class='profile-user'>
-      <i class='bx bx-user-circle ' style="font-size: 100px;"></i>
-    </div> %>
-    <%# <p><strong>Biography</strong></p> %>
+
     <%= simple_form_for(@developer) do |f| %>
+    <%= f.input :photo, as: :file, label: false %>
     <%= f.input :biography, as: :text, placeholder: "Tell us more about you...", label: false %>
     <%# <%= f.input :address %>
 
