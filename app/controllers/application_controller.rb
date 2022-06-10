@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
   private
 
   def set_user
-    @user = current_user if user_signed_in?
+    if user_signed_in?
+      @user = current_user
+      @company = @user.company if @user.role == "company"
+      @developer = @user.developer if @user.role == "developer"
+    end
   end
 end
