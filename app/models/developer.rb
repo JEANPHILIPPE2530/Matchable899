@@ -13,4 +13,11 @@ class Developer < ApplicationRecord
   validates :github, presence: true
   validates :photo, presence: true
   SKILLS = ['Product Designer', 'Web Designer', 'UX Design ', 'Graphics Designer', 'Full-Stack Developer', 'Developer']
+
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_skills,
+    against: [ :name, :skills ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end
