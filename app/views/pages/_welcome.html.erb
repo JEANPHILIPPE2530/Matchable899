@@ -1,5 +1,10 @@
-<div>
-  <h1>Welcome to Matchable!</h1>
-  <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary" %>
-  <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %>
+<div class="welcome-container">
+  <div class="welcome-h1">
+    <h1>Welcome to Matchable!</h1>
+  </div>
+  <div class="welcome-text">
+    <p>Get matched with developers and companies.</p>
+  </div>
+  <%= link_to "Sign in", new_user_session_path, class: "sign-in-button btn btn-primary" %>
+  <%= link_to "Sign up", new_user_registration_path, class: "sign-in-button btn btn-primary" %>
 </div>

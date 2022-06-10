@@ -13,7 +13,7 @@ class CompaniesController < ApplicationController
     else
       @companies = Company.all
     end
-  ends
+  end
 
   def show
     @company = Company.find(params[:id])
