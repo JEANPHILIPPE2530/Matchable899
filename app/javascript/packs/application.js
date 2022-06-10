@@ -15,5 +15,5 @@ ActiveStorage.start()
 import "controllers"
 import "bootstrap"
 
-import { buttonActive } from "./plugins/developer_full.js"
-buttonActive()
+/* import { buttonActive } from "./plugins/developer_full.js"
+buttonActive() */
