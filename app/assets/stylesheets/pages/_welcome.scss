@@ -1,0 +1,28 @@
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  justify-content: center;
+  h1 {
+    color: white;
+    font-weight: bolder;
+  }
+}
+
+.welcome-h1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 64px;
+  margin-bottom: 64px;
+}
+
+.welcome-text {
+  color: white;
+  font-weight: bold;
+}
+
+.sign-in-button {
+  margin: 64px;
+  border-radius: 16px;
+  padding: 24px;
+}
