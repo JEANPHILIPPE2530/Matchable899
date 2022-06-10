@@ -1,5 +1,4 @@
 class CompaniesController < ApplicationController
-  before_action :set_user
 
   def index
     @companies = Company.all
@@ -37,10 +36,6 @@ class CompaniesController < ApplicationController
   end
 
   private
-
-  def set_user
-    @user = current_user
-  end
 
   def company_params
     params.require(:company).permit(:name, :description, :address, :phone_number, :website, :zoom, :user_id, :photo, skills: [])

@@ -1,3 +1,7 @@
 <div class="phone">
-    <%= render 'shared/company/company_full' %>
+  <%= render 'shared/company/company_full' %>
+  <h3><%= @user.email %></h3>
+  <div class="log-out-button">
+    <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+  </div>
 </div>
