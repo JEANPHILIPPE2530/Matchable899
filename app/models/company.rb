@@ -8,5 +8,4 @@ class Company < ApplicationRecord
   validates :address, presence: true
   validates :website, presence: true
   validates :phone_number, presence: true
-  validates :photo, presence: true
 end
