@@ -1,11 +1,3 @@
-<%= form_tag matches_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a movie"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
 <% @matches.each do |match| %>
 <%= match.first_name %>
 <% end %>
@@ -15,4 +7,3 @@
 <div class="phone">
   <%= render 'shared/card' %>
 </div>
-

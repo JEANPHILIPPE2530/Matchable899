@@ -13,7 +13,7 @@
 #     {email: "jp@test.com", password: "password4"}
 # ])
 
-Company.create ([
+Company.create([
     {
     name: "Google",
     description: "Google LLC is an American multinational technology company that focuses on artificial intelligence, search engine technology, online advertising, cloud computing, computer software, quantum computing, e-commerce, and consumer electronics.",
@@ -22,7 +22,7 @@ Company.create ([
     zoom: "google.recruit",
     phone_number: "+123456789",
     photo: "app/assets/images/google_logo.png"
-    }
+    },
 
     {
     name: "Slack",
@@ -32,7 +32,7 @@ Company.create ([
     zoom: "slack.recruit",
     phone_number: "+123456789",
     photo: "app/assets/images/slack_logo.png"
-    }
+    },
 
     {
     name: "Dropbox",
@@ -42,7 +42,7 @@ Company.create ([
     zoom: "dropbox.recruit",
     phone_number: "+123456789",
     photo: "app/assets/images/dropbox_logo.png"
-    }
+    },
 
     {
     name: "Github",
@@ -55,7 +55,7 @@ Company.create ([
     }
 ])
 
-Developer.create ([
+Developer.create([
     {
     first_name: "Harry",
     last_name: "Potter",
@@ -67,7 +67,7 @@ Developer.create ([
     github: "potter",
     skills: ["JavaScript", "HTML", "CSS"],
     photo: "app/assets/images/harry_potter.jpg"
-    }
+    },
 
     {
     first_name: "Tony",
@@ -80,7 +80,7 @@ Developer.create ([
     github: "stark",
     skills: ["JavaScript", "Ruby", "React"],
     photo: "app/assets/images/tony_stark.jpg"
-}
+},
 
     {
     first_name: "Bruce",
@@ -93,7 +93,7 @@ Developer.create ([
     github: "bwayne",
     skills: ["Java", "JavaScript", "Python", "C++", "Ruby"],
     photo: "app/assets/images/bruce_wayne.jpeg"
-    }
+    },
 
     {
     first_name: "James",

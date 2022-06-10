@@ -3,19 +3,19 @@ class CompaniesController < ApplicationController
 
   def index
     @companies = Company.all
-        if params[:query].present?
-          sql_query = " \
-          companies.name @@ :query \
-          OR companies.offers @@ :query \
-          OR developers.first_name @@ :query \
-          OR developers.last_name @@ :query \
-          OR developers.skills @@ :query \
-        "
-        @companies = Company.joins(:developer).where(sql_query, query: "%#{params[:query]}%")
-      else
-        @companies = Company.all
-      end
+    if params[:query].present?
+      sql_query = " \
+      companies.name @@ :query \
+      OR companies.offers @@ :query \
+      OR developers.first_name @@ :query \
+      OR developers.last_name @@ :query \
+      OR developers.skills @@ :query \
+          "
+      @companies = Company.joins(:developer).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @companies = Company.all
     end
+  ends
 
   def show
     @company = Company.find(params[:id])
