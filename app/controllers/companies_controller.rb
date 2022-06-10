@@ -28,7 +28,7 @@ class CompaniesController < ApplicationController
   def create
     @company = Company.new(company_params)
     @company.user = current_user
-    @company.user.role = 'company'
+    @company.user.update(role: "company")
     if @company.save
       redirect_to company_path(@company)
     else
