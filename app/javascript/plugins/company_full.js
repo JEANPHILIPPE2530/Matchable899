@@ -15,6 +15,11 @@ const handleButtonClick = e => {
     section.classList.add("action");
 };
 
-buttons.forEach(btn => {
-    btn.addEventListener("click", handleButtonClick);
-});
+const buttonActive = () => {
+    const buttons = document.querySelectorAll(".company-buttons button");
+    buttons.forEach(btn => {
+        btn.addEventListener("click", handleButtonClick);
+    });
+}
+
+export { buttonActive }

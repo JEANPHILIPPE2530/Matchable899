@@ -1,4 +1,4 @@
-import '../plugins/hammer.min.js'
+import './hammer.min.js'
 
 
 let profiles = document.querySelectorAll('.profile');
