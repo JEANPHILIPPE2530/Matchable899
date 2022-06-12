@@ -26,12 +26,15 @@
   </head>
 
   <body>
-    <%# <%= render 'shared/navbar' %>
-    <%# <%= render 'shared/flashes' %>
-    <% if user_signed_in? %>
-      <%= render 'shared/navbar_down' %>
-    <% end %>
+    <div class="phone">
+      <%# <%= render 'shared/navbar' %>
+      <%# <%= render 'shared/flashes' %>
+      <% if user_signed_in? %>
+        <%= render 'shared/menu' %>
+        <%= render 'shared/navbar_down' %>
+      <% end %>
 
-    <%= yield %>
+      <%= yield %>
+    </div>
   </body>
 </html>

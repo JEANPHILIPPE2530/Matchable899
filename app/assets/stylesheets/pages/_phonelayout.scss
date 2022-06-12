@@ -24,4 +24,7 @@ body {
     backdrop-filter: blur(60px);
     border-radius: 15px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
 }
