@@ -1,16 +1,16 @@
 .wrapper{
     height: 100%;
     width: 300px;
-    position: absolute;
+    position: relative;
 }
 .wrapper .menu-btn{
     position: absolute;
-    left: 30px;
+    left: 40px;
     top: 60px;
     background: #4a4a4a;
     color: #fff;
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 50px;
     z-index: 9999;
     border: 1px solid #333;
     border-radius: 12px;
@@ -21,7 +21,7 @@
     transition: all 0.3s ease;
 }
 #btn:checked ~ .menu-btn{
-    left: 247px;
+    left: 290px;
 }
 .wrapper .menu-btn i{
     position: absolute;
@@ -48,7 +48,7 @@
     position: fixed;
     /* frost effect */
     background: rgba(255, 225, 225, 0.08);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(12px);
 
     /*  */
     height: 60%;
@@ -66,7 +66,7 @@
 
 /* logo */
 #sidebar .logo_content .logo {
-    color: #fff;
+    color: #11101d;
     display: flex;
     height: 50px;
     width: 100%;
@@ -124,14 +124,14 @@
     border: 1px solid rgb(125, 125, 125);
 
     padding-left: 50px;
-    font-size: 18px;
-    color: rgb(125, 125, 125);
+    font-size: 20px;
+    color: rgb(0, 0, 0);
 }
 
 #sidebar ul li .bx-search-alt-2 {
     position: absolute;
     z-index: 99;
-    color: rgb(125, 125, 125);
+    color: rgb(0, 0, 0);
     font-size: 22px;
     line-height: 50px;
     top: 1px;
@@ -145,14 +145,16 @@
 
 
 #sidebar ul li a {
-    color: #fff;
+    color: #1d1b31;
     display: flex;
     align-items: center;
     text-decoration: none;
     transition: all 0.4s ease;
     border-radius: 12px;
-    font-weight: 600;
+    font-weight: 800;
+    font-style: bold;
     width: 95%;
+    font-size: 18px;
 
 }
 
@@ -160,7 +162,7 @@
     background: rgba(255, 225, 225, 0.08);
     backdrop-filter: blur(5px);
     border: 1px solid rgb(125, 125, 125);
-    background: #1d1b31;
+    background: #75aaf9;
 }
 
 #sidebar ul li i {
@@ -171,65 +173,21 @@
     text-align: center;
 }
 
-
-
-/* <--------------------- profile section -------------------------> */
-
-#sidebar .profile_content {
-    position: absolute;
-    color: #fff;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-
-}
-
-#sidebar .profile_content .profile {
-    position: relative;
-    padding: 10px 6px;
-    height: 60px;
-    /* bottom: 10px;
-    margin: 0 5px; */
-    background: #1d1b31;
-    border-radius: 8px;
-    bottom: 10px;
-    margin: 0 10px;
-
-}
-
-.profile_content .profile .profile_details {
-    display: flex;
-    align-items: center;
-}
-
-.profile .profile_details img {
-    height: 45px;
-    width: 45px;
-    object-fit: cover;
-    border-radius: 12px;
-}
-
-.profile .profile_details .name_job {
-    margin-left: 10px;
-
-}
-
-.profile .profile_details .name {
-    font-size: 15px;
-    font-weight: 400;
-}
-
-.profile .profile_details .job {
-    font-size: 12px;
-}
-
-.profile #log_out {
-    position: absolute;
-    left: 96%;
-    bottom: 5px;
-    font-size: 20px;
-    transform: translateX(-50%);
+#sidebar ul li .center {
+    height: 50px;
     min-width: 50px;
-    line-height: 50px;
     border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+    display: flex;
+    background: #1d1b31;
+    color: white;
+    font-size: larger;
+    width: 90%;
+    margin-top: 120px;
+    font-size: 18px;
+
+    a {
+        color: white;
+    }
 }

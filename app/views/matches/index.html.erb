@@ -4,6 +4,25 @@
 <%# <% @matches_company.each do |company| %>
 <%# <%= company.name %>
 <%# <% end %>
-<div class="phone">
-  <%= render 'shared/card' %>
-</div>
+  <div class="text">
+      <div>
+        <P>Matchable</P> 
+      </div>
+      <div class="arrow">
+        <div class="left">
+          <p><i class='bx bx-left-arrow-alt' ></i>Swipe Left</p>
+        </div>
+        <div class="right">
+          <p>Swipe Right<i class='bx bx-right-arrow-alt' ></i></p>
+        </div>
+      </div>
+  </div>
+  <%= render 'shared/card_swipe' %>
+  <div class="indicator">
+    <div class="red">
+      <i class='bx bxs-x-circle' ></i>
+    </div>
+    <div class="green">
+      <i class='bx bxs-check-circle' ></i>
+    </div>
+  </div>
