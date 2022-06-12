@@ -24,5 +24,10 @@ body {
     backdrop-filter: blur(60px);
     border-radius: 15px;
     position: relative;
+
     overflow: scroll;
+
+    flex-direction: column;
+    padding: 16px;
+
 }
