@@ -1,0 +1,11 @@
+.phone {
+  height: 896px;
+  width: 100%;
+  background: rgba(244, 218, 180, 0.1);
+  backdrop-filter: blur(60px);
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
