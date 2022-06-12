@@ -10,10 +10,10 @@
       <%= render 'shared/ios_pwa_links' %>
 
 
-<link rel="manifest" href="./manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <style>
@@ -28,10 +28,8 @@
   <body>
 
     <div class="phone">
-      <%# <%= render 'shared/navbar' %>
-      <%# <%= render 'shared/flashes' %>
+
       <% if user_signed_in? %>
-        <%= render 'shared/menu' %>
         <%= render 'shared/navbar_down' %>
       <% end %>
 
