@@ -11,59 +11,49 @@
                         <div class="logo_name">atchable</div>
                     </div>
                 </div>
-                <ul class="nav_list">
+                <ul>
                     <li>
-                        <a href="#">
                             <i class='bx bx-search-alt-2'></i>
                             <input type="search" placeholder="Search..." name="Search Bar" class="search">
-                        </a>
                     </li>
                     <li>
                       <%= link_to user_path(@user) do %>
-                        <i class='bx bxs-grid-alt' ></i>
-                        <span class="links_name">Dashboard</span>
+                        <i class='bx bxs-heart' ></i>
+                        <span class="links_name">My Matches</span>
                       <% end %>
                     </li>
                     <li>
-                      <a href="#">
+                      <%= link_to user_path(@user) do %>
                         <i class='bx bxs-chat'></i>
                         <span class="links_name">Messages</span>
-                      </a>
+                      <% end %>
                     </li>
                     <li>
-                        <a href="#">
-                            <i class='bx bxs-user-plus'></i>
+                      <%= link_to user_path(@user) do %>
+                            <i class='bx bxl-gmail'></i>
                             <span class="links_name">Match</span>
-                        </a>
+                      <% end %>
                     </li>
                     <li>
                       <% if @user.role == "developer" %>
                         <%= link_to developer_path(@user) do %>
-                          <i class='bx bxs-user'></i>
+                          <i class='bx bxs-user-circle'></i>
                           <span class="links_name">User Profile</span>
                         <% end %>
                       <% elsif @user.role == "company" %>
                         <%= link_to company_path(@user) do %>
-                          <i class='bx bxs-user'></i>
+                          <i class='bx bxs-user-circle'></i>
                           <span class="links_name">User Profile</span>
                         <% end %>
                       <% end %>
                     </li>
                     <li>
-                      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+                      <div class="center">
+                        <i class='bx bxs-log-out-circle' ></i>
+                        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+                      </div>
                     </li>
                 </ul>
-                <%# <div class="profile_content">
-                    <div class="profile">
-                        <div class="profile_details">
-                            <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="">
-                            <div class="name_job">
-                                <div class="name">Jean Philippe</div>
-                                <div class="job">Developer</div>
-                            </div>
-                        </div>
-                        <i class='bx bx-log-out-circle' id="log_out"></i>
-                    </div>
-                </div> %>
+
             </nav>
         </div>
