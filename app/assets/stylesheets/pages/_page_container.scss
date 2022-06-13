@@ -1,0 +1,10 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  justify-content: center;
+  h1 {
+    color: white;
+    font-weight: bolder;
+  }
+}
