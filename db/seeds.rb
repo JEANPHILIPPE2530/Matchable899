@@ -6,7 +6,8 @@ require "open-uri"
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+Chatroom.destroy_all
+Match.destroy_all
 Company.destroy_all
 Developer.destroy_all
 User.destroy_all
@@ -24,10 +25,7 @@ jean_philippe_auguste = User.create(
 )
 
 # Company.destroy_all
-User.destroy_all
-lorene = User.create({email: "lorene@test.com", password: "password1"})
 nad = User.create({email: "nad@test.com", password: "password2"})
-yeshna = User.create({email: "yeshna@test.com", password: "password3"})
 jp = User.create({email: "jp@test.com", password: "password4"})
 
 
@@ -132,7 +130,7 @@ company_1 = Company.new({
      })
      file = URI.open('https://ca.slack-edge.com/T02NE0241-UA3C34C9Y-5130922e9939-512')
      developer_1.photo.attach(io: file, filename: 'basile_marquefave.png', content_type: 'image/png')
-     developer_1.save
+     developer_1.save!
 # }
 # )
 # developer_1.photo.attach(io: URI.open('upload/harry_potter.jpg'), filename: "harry_potter.jpg", content_type: "image/jpg")
@@ -243,7 +241,7 @@ developer_4 = Developer.create({
 
 
  developer_4 = Developer.new({
-     first_name: "Lorène",
+     first_name: "Lorene",
      last_name: "Manampisoa",
      biography: "Hi, I am Web Developer with 7 Years of experience as a freelancer around the globe.",
      phone_number: "+123456789",
@@ -265,3 +263,13 @@ developer_4 = Developer.create({
 
 developer_4.photo.attach(io: URI.open('upload/james_bond.jpeg'), filename: "james_bond.jpeg", content_type: "image/jpeg")
 
+match_1 = Match.new({
+  developer_id: developer_4.id,
+  company_id: company_4.id,
+})
+match_1.save
+
+chatroom_1 = Chatroom.new({
+  match_id: match_1.id,
+})
+chatroom_1.save
