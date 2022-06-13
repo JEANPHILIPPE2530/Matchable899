@@ -4,7 +4,9 @@
             <div class="profile" data-swipe-target="profile">
                 <div class="card-header">
                     <div class="card-cover" style="background-image: url('https://images.unsplash.com/photo-1653764828214-a12497459a96?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')"></div>
-                    <img class="card-avatar" src="https://avatars.githubusercontent.com/u/100473101?v=4&auto=format&fit=crop&w=1470&q=80" alt="avatar">
+                    <% if c.photo.attached? %>
+                      <%= cl_image_tag c.photo.key, class: "card-avatar" %>
+                    <% end %>
                     <h1 class="card-fullname"><%= c.name %></h1>
                     <h2 class="card-jobtitle">Developer</h2>
                 </div>
