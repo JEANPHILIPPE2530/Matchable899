@@ -12,7 +12,8 @@ class MatchesController < ApplicationController
         #@matches_company = Company.where(sql_query_company, query: "%#{params[:query]}%")
       #else
         # @matches = Developer.all
-        @developers = Developer.all
+      @developers = Developer.all
+      @companies = Company.all
       #end
     end
 
