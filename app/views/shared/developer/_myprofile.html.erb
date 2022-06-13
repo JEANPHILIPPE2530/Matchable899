@@ -2,7 +2,6 @@
         <div class="myprofile-header">
             <div class="myprofile-cover" style="background-image: url('https://images.unsplash.com/photo-1653764828214-a12497459a96?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')"></div>
             <%= cl_image_tag @developer.photo.key, class: "myprofile-avatar"  %>
-            <%# <img class="myprofile-avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="avatar"> %>
             <h1 class="myprofile-fullname"> <%= @developer.first_name %> <%= @developer.last_name %></h1>
             <h2 class="myprofile-jobtitle">Developer</h2>
         </div>
@@ -18,7 +17,7 @@
                   <% end %>
                 </div>
             </div>
-            <div class="myprofile-section" id="experience">
+            <%# <div class="myprofile-section" id="experience">
                 <div class="myprofile-content">
                     <div class="myprofile-subtitle">WORK EXPERIENCE</div>
                     <div class="myprofile-timeline">
@@ -40,7 +39,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> %>
             <div class="myprofile-section" id="contact">
                 <div class="myprofile-content">
                     <div class="myprofile-subtitle">CONTACT</div>
