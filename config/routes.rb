@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
   resources :offers, only: %i[edit update destroy]
 
-  resources :developers, only: %i[index show]
+  resources :developers
 
   resources :matches, only: :index
 
