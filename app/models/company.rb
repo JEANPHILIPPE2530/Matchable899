@@ -8,13 +8,4 @@ class Company < ApplicationRecord
   validates :address, presence: true
   validates :website, presence: true
   validates :phone_number, presence: true
-
-
-  include PgSearch::Model
-  pg_search_scope :search_by_name_and_offer,
-    against: [ :name, :offer ],
-    using: {
-      tsearch: { prefix: true } # <-- now `superman batm` will return something!
-    }
-
 end

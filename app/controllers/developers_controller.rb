@@ -1,4 +1,12 @@
-class DevelopersController < ApplicationController
+class DevelopersController < ApplicationRecord
+  def index
+    if params[:query].present?
+      @developers = Developer.search_by_name_and_role(params[:query])
+    else
+      @developers = Developer.all
+    end
+  end
+end
 
   def show
   end

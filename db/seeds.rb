@@ -15,6 +15,16 @@ lorene = User.create(
     # {email: "jp@test.com", password: "password4"}
 )
 
+require "open-uri"
+
+file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
+company = Company.new(name: 'NES', description: "A great console", address: '', website: '', phone_number: '')
+developer = Developer.new(first_name: 'NES', last_name: "A great console", biography: '', address: '', website: '', github: '')
+company.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+company.save
+developer.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+developer.save
+
 
 # file = URI.open('upload/')
 # article = Article.new(title: 'NES', body: "A great console")

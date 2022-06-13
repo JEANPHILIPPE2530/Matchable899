@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
   resources :offers, only: %i[edit update destroy]
 
-  resources :developers
+  resources :developers, only: :index
 
   resources :matches, only: :index
 
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
     # JP
   # --------- Start
-  # get "/matches" => 'matches#show', as: :matches 
+  # get "/matches" => 'matches#show', as: :matches
   post "matches/approve/developer/:id", to: "matches#approve", as: :approve_developer
   post "matches/decline/developer/:id", to: "matches#decline", as: :decline_developer
   post "matches/approve/company/:id", to: "matches#approve", as: :approve_company
