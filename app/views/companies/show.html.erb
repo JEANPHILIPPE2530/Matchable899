@@ -1,9 +1,11 @@
-<div class="phone">
-<% if @company.photo.attached? %>
-  <%= cl_image_tag @company.photo.key, height: 500 %>
-<% end %>
-<br>
-<%= @company.name %>
-<br>
-<%= @company.description %>
-</div>
+<%# <div class="phone"> %>
+<%# if @company.photo.attached? %>
+  <%# cl_image_tag @company.photo.key, height: 500 %>
+<%# end %>
+<%# <br> %>
+<%# @company.name %>
+<%# <br> %>
+<%# @company.description %>
+<%# </div> %>
+
+    <%= render 'shared/company/myprofile' %>

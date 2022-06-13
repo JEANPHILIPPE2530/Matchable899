@@ -1,11 +1,10 @@
-<div class="phone">
   <% if user_signed_in? %>
     <% if current_user.role.nil? %>
       <%= render 'choice' %>
     <% else %>
-      <%= render 'shared/card' %>
+      <%= render 'shared/menu' %>
+      <%= render 'shared/card_swipe' %>
     <% end %>
     <% else %>
     <%= render 'welcome' %>
   <% end %>
-</div>

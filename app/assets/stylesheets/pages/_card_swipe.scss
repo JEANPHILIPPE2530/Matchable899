@@ -13,9 +13,6 @@
 
 
 /* PUT CARDS ONE ON TOP OF EACH OTHER */
-main {
-    max-width: 90%;
-}
 
 .profiles {
     width:100%;
@@ -23,7 +20,7 @@ main {
 }
 
 .profile {
-max-width: 360px;
+max-width: 320px;
 margin: auto;
 position: relative;
 overflow-x: hidden; 
@@ -36,15 +33,9 @@ position: absolute;
 top: 150px;
 overflow: hidden;
 cursor:pointer;
--webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-   -khtml-user-select: none; /* Konqueror HTML */
-     -moz-user-select: none; /* Old versions of Firefox */
-      -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                supported by Chrome, Edge, Opera and Firefox */
-    left: 55px;
-    top: 260px;
+top: 200px;
+left: 30px;
+
 }
 
 /* PROFILE CARD CONTENT */
@@ -77,10 +68,6 @@ width: 100px;
 height: 100px;
 box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
 border-radius: 50%;
--o-object-position: center;
-    object-position: center;
--o-object-fit: cover;
-    object-fit: cover;
 position: absolute;
 bottom: 0;
 left: 50%;
@@ -171,16 +158,6 @@ margin-right: 10px;
 fill: #637faa;
 }
 
-/* MSG FOR WHEN THERE IS NO CARD */
-.profiles::before {
-    content:'No more profiles to match...';
-    color:var(--dark-grey);
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
-
 /* MATCHING FUNCTION JS */
 .profile--match {
     transition: var(--transition-time);
@@ -196,16 +173,16 @@ fill: #637faa;
     transition:var(--transition-time);
 }
 
-.profile--matching::after, .profile--nexting::after {
+.profile--matching::after {
     content: 'MATCH';
     font-weight: bold;
-    font-size: 20px;
-    padding:8px 12px;
+    font-size: 50px;
+    padding: 8px 20px;
     border:solid 2px var(--green);
-    color:var(--green);
-    background:var(--light-grey);
-    position:absolute;
-    top:200px;
+    color: var(--green);
+    background: var(--light-grey);
+    position: absolute;
+    top: 200px;
     right: 85px;
     border-radius: 4px;
     /* transform:rotate(24deg); */
@@ -213,11 +190,17 @@ fill: #637faa;
 } 
 
 .profile--nexting::after {
-    content:'NEXT';
-    border: solid 2px var(--red);
+    content: 'NEXT';
+    font-weight: bold;
+    font-size: 50px;
+    padding: 8px 20px;
+    border:solid 2px var(--red);
     color: var(--red);
+    background: var(--light-grey);
+    position: absolute;
     top: 200px;
-    left: 85px;
+    right: 85px;
+    border-radius: 4px;
+    /* transform:rotate(24deg); */
+    opacity: 45%;
 }
-
-/* end of card */

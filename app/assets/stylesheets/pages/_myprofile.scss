@@ -1,7 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500|Jost:400,500,600&display=swap");
-
-.developer {
-    max-width: 360px;
+.myprofile {
+    max-width: 340px;
     margin: auto;
     position: relative;
     overflow-x: hidden;
@@ -10,55 +8,44 @@
     transition: 0.5s;
     flex-direction: column;
     border-radius: 20px;
-    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2);
-    top: 140px;
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2);
+    // margin-bottom: 30px;
+    margin-top: 30px;
+    height: 700px;
+    overflow: scroll;
+    // margin-bottom: 10px;
     }
     
-    .developer[data-state="#about"] {
-    height: 500px;
-    }
-    .developer[data-state="#about"] .developer-frame {
-    padding-top: 0;
-    }
-    
-    .developer[data-state="#contact"] {
-    height: 430px;
-    }
-    
-    .developer[data-state="#experience"] {
-    height: 550px;
-    }
-    
-    .developer.action .developer-header {
+    .myprofile.action .myprofile-header {
     height: 80px;
     }
-    .developer.action .developer-cover {
+    .myprofile.action .myprofile-cover {
     height: 100px;
     top: -50px;
     }
-    .developer.action .developer-avatar {
+    .myprofile.action .myprofile-avatar {
     transform: none;
     left: 20px;
     width: 50px;
     height: 50px;
     bottom: 10px;
     }
-    .developer.action .developer-fullname,
-    .developer.action .developer-jobtitle {
+    .myprofile.action .myprofile-fullname,
+    .myprofile.action .myprofile-jobtitle {
     left: 86px;
     transform: none;
     }
-    .developer.action .developer-fullname {
+    .myprofile.action .myprofile-fullname {
     bottom: 18px;
     font-size: 19px;
     }
-    .developer.action .developer-jobtitle {
+    .myprofile.action .myprofile-jobtitle {
     bottom: 16px;
     letter-spacing: 1px;
     font-size: 10px;
     }
     
-    .developer-header {
+    .myprofile-header {
     position: relative;
     display: flex;
     height: 200px;
@@ -66,11 +53,11 @@
     width: 100%;
     transition: 0.3s;
     }
-    .developer-header * {
+    .myprofile-header * {
     transition: 0.3s;
     }
     
-    .developer-cover {
+    .myprofile-cover {
     width: 100%;
     height: 160px;
     position: absolute;
@@ -85,22 +72,18 @@
     transition: 0.5s;
     }
     
-    .developer-avatar {
+    .myprofile-avatar {
     width: 100px;
     height: 100px;
     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
     border-radius: 50%;
-    -o-object-position: center;
-        object-position: center;
-    -o-object-fit: cover;
-        object-fit: cover;
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%) translateY(-64px);
     }
     
-    .developer-fullname {
+    .myprofile-fullname {
     position: absolute;
     bottom: 0;
     font-size: 22px;
@@ -111,7 +94,7 @@
     left: 50%;
     }
     
-    .developer-jobtitle {
+    .myprofile-jobtitle {
     position: absolute;
     bottom: 0;
     font-size: 11px;
@@ -125,7 +108,7 @@
     transform: translateX(-50%) translateY(-7px);
     }
     
-    .developer-frame {
+    .myprofile-frame {
     position: relative;
     flex: 1;
     display: flex;
@@ -133,17 +116,17 @@
     flex-direction: column;
     }
     
-    .developer-subtitle {
+    .myprofile-subtitle {
     font-weight: 700;
     font-size: 13px;
     margin-bottom: 8px;
     }
     
-    .developer-content {
+    .myprofile-content {
     padding: 20px;
     }
     
-    .developer-desc {
+    .myprofile-desc {
     line-height: 1.6;
     color: #636b6f;
     font-size: 14px;
@@ -152,125 +135,59 @@
     font-family: "DM Sans", sans-serif;
     }
     
-    .developer-icon {
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    margin-bottom: 30px;
+    
+    .myprofile-icon {
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        margin-bottom: 16px;
     }
     
-    .developer-icon a {
-    color: rgb(88, 20, 223);
-    height: 32px;
-    width: 32px;
-    border-radius: 1px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.3s;
-    background-color: rgba(93, 133, 193, 0.05);
-    border-radius: 8px;
-    margin-right: 10px;
-    text-decoration: none;
-    }
-    .developer-icon a:hover {
-    fill: #637faa;
-    }
-    .developer-icon a:last-child {
-    margin-right: 0;
+    .myprofile-icon a {
+        color: black;
+        height: 40px;
+        width: 60px;
+        border-radius: 50px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(3, 33, 78, 0.05);
+        margin-right: 10px;
+        text-decoration: none;
+        border: 1px solid #516acc;
     }
     
-    .developer-buttons {
-    display: flex;
-    background-color: #fff;
-    margin-top: auto;
-    position: sticky;
-    bottom: 0;
-    left: 0;
-    }
-    .developer-buttons button {
-    flex: 1 1 auto;
-    -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-    background: 0;
-    font-size: 13px;
-    border: 0;
-    padding: 15px 5px;
-    cursor: pointer;
-    color: #5c5c6d;
-    transition: 0.3s;
-    font-family: "Jost", sans-serif;
-    font-weight: 500;
-    outline: 0;
-    border-bottom: 3px solid transparent;
-    }
-    .developer-buttons button.action, .developer-buttons button:hover {
-    color: #2b2c48;
-    border-bottom: 3px solid #8a84ff;
-    background: linear-gradient(to bottom, rgba(127, 199, 231, 0) 0%, rgba(207, 204, 255, 0.2) 44%, rgba(211, 226, 255, 0.4) 100%);
-    }
-    
-    .developer-section {
-    display: none;
-    }
-    .developer-section.action {
-    display: block;
-    -webkit-animation: fadeIn 0.6s both;
-            animation: fadeIn 0.6s both;
-    }
-    
-    @-webkit-keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translatey(40px);
-    }
-    100% {
-        opacity: 1;
-    }
-    }
-    
-    @keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translatey(40px);
-    }
-    100% {
-        opacity: 1;
-    }
-    }
-    .developer-timeline {
+    .myprofile-timeline {
     margin-top: 30px;
     position: relative;
     }
-    .developer-timeline:after {
+    
+    .myprofile-timeline:after {
     background: linear-gradient(to top, rgba(134, 214, 243, 0) 0%, #516acc 100%);
     content: "";
-    left: 42px;
+    left: 20px;
     width: 2px;
     top: 0;
     height: 100%;
     position: absolute;
-    content: "";
     }
     
-    .developer-item {
+    .myprofile-item {
     position: relative;
     padding-left: 60px;
     padding-right: 20px;
     padding-bottom: 30px;
     z-index: 1;
     }
-    .developer-item:last-child {
+    .myprofile-item:last-child {
     padding-bottom: 5px;
     }
-    .developer-item:after {
+    .myprofile-item:after {
     content: attr(data-year);
     width: 10px;
     position: absolute;
     top: 0;
-    left: 37px;
+    left: 17px;
     width: 8px;
     height: 8px;
     line-height: 0.6;
@@ -282,24 +199,24 @@
     background: linear-gradient(to bottom, #a0aee3 0%, #516acc 100%);
     }
     
-    .developer-item-title {
+    .myprofile-item-title {
     font-weight: 500;
     font-size: 14px;
     margin-bottom: 5px;
     }
     
-    .developer-item-desc {
+    .myprofile-item-desc {
     font-size: 13px;
     color: #6f6f7b;
     line-height: 1.5;
     font-family: "DM Sans", sans-serif;
     }
     
-    .developer-contact-wrapper {
+    .myprofile-contact-wrapper {
     margin-top: 20px;
     }
     
-    .developer-contact {
+    .myprofile-contact {
     display: flex;
     align-items: center;
     font-size: 13px;
@@ -308,10 +225,10 @@
     line-height: 1.6;
     cursor: pointer;
     }
-    .developer-contact + .developer-contact {
+    .myprofile-contact + .myprofile-contact {
     margin-top: 16px;
     }
-    .developer-contact svg {
+    .myprofile-contact svg {
     flex-shrink: 0;
     width: 30px;
     min-height: 34px;
@@ -334,6 +251,5 @@
     cursor: pointer;
     font-size: 14px;
     font-weight: 500;
-    font-family: "Jost", sans-serif;
     transition: 0.3s;
     }

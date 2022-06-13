@@ -1,12 +1,13 @@
-<div class="phone">
   <% if @user.role == 'company' %>
-    <%= render  %>
+    <%= render 'shared/company/myprofile' %>
   <% elsif @user.role == 'developer' %>
+    <%= render 'shared/developer/myprofile' %>
+
   <% end %>
+
   <div class="settings-buttons">
     <%= link_to "Edit details", edit_user_registration_path %>
   </div>
   <div class="log-out-button">
     <%= link_to "Log out", destroy_user_session_path, method: :delete %>
   </div>
-</div>
