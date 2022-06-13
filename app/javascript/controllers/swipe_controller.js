@@ -2,21 +2,21 @@ import '../plugins/hammer.min.js'
 
 import { Controller } from "stimulus"
 
-const myMatch = []
+const myMatchId = []
+let myJson = {}
 export default class extends Controller {
     static targets = [ "profile" ]
 
     connect() {
         // this.outputTarget.textContent = 'Hello, from Card Swipe!'
-        console.log ('hello, card swipe')
-
+        // console.log ('hello, card swipe')
         const maxAngle = 42;
         const smooth = 0.3;
         const threshold = 42;
         const thresholdMatch = 50;
 
         // let profiles = document.querySelectorAll('.profile');
-        console.log(this.profileTargets)
+        // console.log(this.profileTargets)
         
         const setupDragAndDrop = (p) => {
             const hammertime = new Hammer(p);
@@ -43,20 +43,41 @@ export default class extends Controller {
                 p.style.transform = ``;
                 if (posX > thresholdMatch) {
                     p.classList.add('profile--match');
-
+                    // console.log(p.innerHTML)
+                    
+                    
                 } else if (posX < -thresholdMatch) {
                     p.classList.add('profile--next');
                 } else {
                     p.classList.add('profile--back');
                 }
+                const devIdMatchEl = document.querySelectorAll('.profile--match .card-dev-id')
+                devIdMatchEl.forEach(el => (myMatchId.includes(el.innerText)) ? console.log(el.innerText) : myMatchId.push(el.innerText))
             }
         });
     }
     
-    this.profileTargets.forEach((p) => setupDragAndDrop(p));
-    }
+    // const sendToMatchController = (myJson) => {
+    //         fetch('/matches', {
+    //                 method: 'POST',
+    //                 headers: {
+    //                         "Content-Type": "application/json",
+    //                         "Accept": "application/json"
+    //                     },
+    //                     body: JSON.stringify(myJson)
+    //                 })
+    //             }
+                
+                this.profileTargets.forEach((p) => setupDragAndDrop(p));
+                
 
+        
+ 
+    // window.onbeforeunload = myMatchId.forEach(data => myJson += `{user_id: ${data}},`);
+    // window.onbeforeunload = sendToMatchController(myJson);
     
+    
+}
 
 }
 

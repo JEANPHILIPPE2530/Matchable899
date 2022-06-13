@@ -26,7 +26,8 @@
         <div class="card-header">
           <div class="card-cover" style="background-image: url('https://images.unsplash.com/photo-1653764828214-a12497459a96?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')"></div>
           <img class="card-avatar" src="https://avatars.githubusercontent.com/u/100473101?v=4&auto=format&fit=crop&w=1470&q=80" alt="avatar">
-          <h1 class="card-fullname"><%= d.first_name %><%= d.last_name %></h1>
+          <h1 class="card-fullname"><%= d.first_name %> <%= d.last_name %></h1>
+          <p class="d-none card-dev-id"><%= d.id %></p>
           <h2 class="card-jobtitle">Developer</h2>
         </div>
         <div class="card-frame">
