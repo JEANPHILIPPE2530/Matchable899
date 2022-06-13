@@ -10,6 +10,7 @@ class Company < ApplicationRecord
   validates :zoom, presence: true
   validates :phone_number, presence: true
 
+
   include PgSearch::Model
   pg_search_scope :search_by_name_and_offer,
     against: [ :name, :offer ],

@@ -32,7 +32,6 @@ gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'devise'
 
-gem 'pg_search', '~> 2.3.0'
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass', '~> 5.6.1'
