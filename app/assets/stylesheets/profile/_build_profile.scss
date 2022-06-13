@@ -1,12 +1,12 @@
 .profile-container {
-  padding: 16px;
-  // justify-content: center;
+  padding: 8px;
+  justify-content: center;
   max-width: 390px;
   // text-align: center;
   width: 100%;
   margin: auto;
   height: 800px;
-  overflow: scroll;
+  overflow: auto;
   h1 {
     font-size: 1.5em;
     display: flex;
@@ -28,6 +28,9 @@
   background-color: lightgrey;
   font-size: 18px;
   opacity: 0.8;
+  text {
+    justify-content: flex-start;
+  }
 }
 
 .file {
