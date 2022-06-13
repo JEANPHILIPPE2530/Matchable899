@@ -16,7 +16,7 @@
         <%= cl_image_tag developer.photo.key%>
         <div class="card-product-infos">
           <h2><%= developer.first_name %></h2>
-          <% @developer.skills.each do |s| %>
+          <% developer.skills.each do |s| %>
             <p> <%= s %> </p>
           <% end %>
         </div>
