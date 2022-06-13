@@ -1,6 +1,6 @@
 class Company < ApplicationRecord
   belongs_to :user
-  has_many :offers
+  has_many :matches
   has_one_attached :photo
 
   validates :name, presence: true, uniqueness: true
