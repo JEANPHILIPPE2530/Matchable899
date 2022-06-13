@@ -1,9 +1,6 @@
 {
  "name": "Matchable",
  "background_color": "white",
-// app/assets/config/manifest.js
-// ...
-//= link manifest.json
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
