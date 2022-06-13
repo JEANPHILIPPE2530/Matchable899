@@ -7,8 +7,8 @@ class Company < ApplicationRecord
   validates :description, presence: true, length: { minimum: 25 }
   validates :address, presence: true
   validates :website, presence: true
+  validates :zoom, presence: true
   validates :phone_number, presence: true
-
 
   include PgSearch::Model
   pg_search_scope :search_by_name_and_offer,
@@ -16,5 +16,4 @@ class Company < ApplicationRecord
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
-
 end
