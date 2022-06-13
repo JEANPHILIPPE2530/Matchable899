@@ -1,12 +1,16 @@
-class DevelopersController < ApplicationRecord
+class DevelopersController < ApplicationController
   def index
     if params[:query].present?
-      @developers = Developer.search_by_name_and_role(params[:query])
+        sql_query = " \
+        developers.first_name @@ :query \
+        OR developers.last_name @@ :query \
+      "
+      @developers = Developer.where(sql_query, query: "%#{params[:query]}%")
     else
       @developers = Developer.all
     end
   end
-end
+
 
   def show
   end
