@@ -1,8 +1,10 @@
 .card-product {
   overflow: hidden;
   height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 16px;
+  background: rgba(244, 218, 180, 0.1);
+  backdrop-filter: blur(60px);
+  border-radius: 15px;  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
 }
@@ -14,12 +16,14 @@
 }
 
 .card-product h2 {
-  font-size: 16px;
+  color: white;
+  font-size: 24px;
   font-weight: bold;
   margin: 0;
 }
 
 .card-product p {
+  color: white;
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;

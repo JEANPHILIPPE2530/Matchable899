@@ -2,8 +2,7 @@
     <% if current_user.role.nil? %>
       <%= render 'choice' %>
     <% else %>
-      <%= render 'shared/menu' %>
-      <%= render 'welcome_user' %>
+      <%= render 'search_for' %>
     <% end %>
     <% else %>
     <%= render 'welcome' %>

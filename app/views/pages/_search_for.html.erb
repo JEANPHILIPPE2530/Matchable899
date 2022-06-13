@@ -1,0 +1,7 @@
+  <% if @user.role == "developer" %>
+    <h1>Hello, <%= @developer.first_name %>!</h1>
+      <%= link_to "View companies", companies_path, class: "buttons" %>
+  <% elsif @user.role == "company" %>
+    <h1>Welcome, <%= @company.name %>!</h1>
+    <%= link_to "View developers", developers_path, class: "buttons" %>
+  <% end %>
