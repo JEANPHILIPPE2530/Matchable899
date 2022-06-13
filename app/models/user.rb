@@ -8,18 +8,18 @@ class User < ApplicationRecord
   has_one :developer
 # JP
 # --------- Start
-  validates :email, presence: true, uniqueness: true
+  # validates :email, presence: true, uniqueness: true
 
-    def matches
-      liked_user_ids = like.where(user_id: self.id).map(&:liked_user_id)
-      likes_profile_user_ids = like.where(liked_user_id: self.id).map(&:user_id)
+  #   def matches
+  #     liked_user_ids = like.where(user_id: self.id).map(&:liked_user_id)
+  #     likes_profile_user_ids = like.where(liked_user_id: self.id).map(&:user_id)
 
-      matched_ids = liked_user_ids.select{ |id| likes_profile_user_ids.include?(id) }
-      # the 3 lines up should gives us through the user ids if the profile i liked, likes us back
-      # and then we can use this for further action like view full profile and messages.
+  #     matched_ids = liked_user_ids.select{ |id| likes_profile_user_ids.include?(id) }
+  #     # the 3 lines up should gives us through the user ids if the profile i liked, likes us back
+  #     # and then we can use this for further action like view full profile and messages.
 
-      User.where(id: matched_ids)
-    end
+  #     User.where(id: matched_ids)
+  #   end
 # --------- End
 
 end

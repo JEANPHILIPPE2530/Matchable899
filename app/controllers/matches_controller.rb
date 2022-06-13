@@ -1,4 +1,6 @@
 class MatchesController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
     def index
       #if params[:query].present?
           #sql_query = " \
@@ -18,14 +20,15 @@ class MatchesController < ApplicationController
     end
 
     def create
-      @matches = Matches.new(match_params)
+      raise
+      # @matches = Matches.new(match_params)
     end
 
     private
 
-    def match_params
-      params.require(:user).permit(match_id)
-    end
+    # def match_params
+    #   params.require(:user).permit(user_id)
+    # end
 end
 
 #   # JP

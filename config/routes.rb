@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :developers
 
-  resources :matches, only: :index
+  resources :matches, only: %i[index create]
 
   resources :chatrooms, only: :show do
     resources :messages, only: :create
