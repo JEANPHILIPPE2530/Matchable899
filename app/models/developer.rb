@@ -11,7 +11,6 @@ class Developer < ApplicationRecord
   validates :address, presence: true
   validates :website, presence: true
   validates :github, presence: true
-  validates :photo, presence: true
   SKILLS = ['Product Designer', 'Web Designer', 'UX Design ', 'Graphics Designer', 'Full-Stack Developer', 'Developer']
 
   include PgSearch::Model

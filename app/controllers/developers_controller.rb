@@ -1,5 +1,4 @@
 class DevelopersController < ApplicationController
-
   def show
   end
 
