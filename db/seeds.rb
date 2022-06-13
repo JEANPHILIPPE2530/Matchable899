@@ -6,30 +6,28 @@ require "open-uri"
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Company.destroy_all
+# Company.destroy_all
 User.destroy_all
-lorene = User.create(
-    {email: "lorene@test.com", password: "password1"},
-    # {email: "nad@test.com", password: "password2"},
-    # {email: "yeshna@test.com", password: "password3"},
-    # {email: "jp@test.com", password: "password4"}
-)
+lorene = User.create({email: "lorene@test.com", password: "password1"})
+nad = User.create({email: "nad@test.com", password: "password2"})
+yeshna = User.create({email: "yeshna@test.com", password: "password3"})
+jp = User.create({email: "jp@test.com", password: "password4"})
 
 
 # file = URI.open('upload/')
 # article = Article.new(title: 'NES', body: "A great console")
 # article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
-company_1 = Company.create!({
-    name: "Google",
-    description: "Google LLC is an American multinational technology company that focuses on artificial intelligence, search engine technology, online advertising, cloud computing, computer software, quantum computing, e-commerce, and consumer electronics.",
-    address: "Ebene, Mauritius",
-    website: "www.google.com",
-    zoom: "google.recruit",
-    phone_number: "+123456789",
-    photo: File.read("upload/google_logo.png"),
-    user: lorene
-    })
+# company_1 = Company.create!({
+#     name: "Google",
+#     description: "Google LLC is an American multinational technology company that focuses on artificial intelligence, search engine technology, online advertising, cloud computing, computer software, quantum computing, e-commerce, and consumer electronics.",
+#     address: "Ebene, Mauritius",
+#     website: "www.google.com",
+#     zoom: "google.recruit",
+#     phone_number: "+123456789",
+#     photo: File.read("upload/google_logo.png"),
+#     user: lorene
+#     })
     # photo: "app/assets/images/google_logo.png"
 
 # company_1.photo.attach(io: URI.open('upload/google_logo.png'), filename: "google_logo.png", content_type: "image/png")
@@ -77,70 +75,68 @@ company_1 = Company.create!({
 
 # Developer.create([
 #     {
-# developer_1 = Developer.create({
-#     first_name: "Harry",
-#     last_name: "Potter",
-#     biography: "Hello, I am Web Developer with 2 Years of experience working with startups and specialized in JavaScript",
-#     phone_number: "+123456789",
-#     address: "vacoas, Mauritius",
-#     website: "www.harrypotter.com",
-#     zoom: "harry.potter",
-#     github: "potter",
-#     skills: ["JavaScript", "HTML", "CSS"],
-#     photo: "app/assets/images/harry_potter.jpg"
-#     },
-#     # photo: "app/assets/images/harry_potter.jpg"
-# }
-# )
-# developer_1.photo.attach(io: URI.open('upload/harry_potter.jpg'), filename: "harry_potter.jpg", content_type: "image/jpg")
+developer_1 = Developer.create({
+    first_name: "Harry",
+    last_name: "Potter",
+    biography: "Hello, I am Web Developer with 2 Years of experience working with startups and specialized in JavaScript",
+    phone_number: "+123456789",
+    address: "vacoas, Mauritius",
+    website: "www.harrypotter.com",
+    zoom: "harry.potter",
+    github: "potter",
+    skills: ["JavaScript", "HTML", "CSS"],
+    user_id: lorene.id,
+    }
+    # photo: "app/assets/images/harry_potter.jpg"
+)
+developer_1.photo.attach(io: URI.open('upload/harry_potter.jpg'), filename: "harry_potter.jpg", content_type: "image/jpg")
 
-# developer_2 = Developer.create({
-#     first_name: "Tony",
-#     last_name: "Stark",
-#     biography: "The founder of Stark Enterprise and Freelancer for Web Dev Jobs for 15years. Interested in Jobs in Mauritius.",
-#     phone_number: "+123456789",
-#     address: "St Pierre, Mauritius",
-#     website: "www.stark.com",
-#     zoom: "stark",
-#     github: "stark",
-#     skills: ["JavaScript", "Ruby", "React"],
-#     photo: "app/assets/images/tony_stark.jpg"
-# },
-#     # photo: "app/assets/images/tony_stark.jpg"
-# )
-# developer_2.photo.attach(io: URI.open('upload/tony_stark.jpg'), filename: "tony_stark.jpg", content_type: "image/jpg")
+developer_2 = Developer.create({
+    first_name: "Tony",
+    last_name: "Stark",
+    biography: "The founder of Stark Enterprise and Freelancer for Web Dev Jobs for 15years. Interested in Jobs in Mauritius.",
+    phone_number: "+123456789",
+    address: "St Pierre, Mauritius",
+    website: "www.stark.com",
+    zoom: "stark",
+    github: "stark",
+    skills: ["JavaScript", "Ruby", "React"],
+    user_id: nad.id,
+}
+    # photo: "app/assets/images/tony_stark.jpg"
+)
+developer_2.photo.attach(io: URI.open('upload/tony_stark.jpg'), filename: "tony_stark.jpg", content_type: "image/jpg")
 
-# developer_3 = Developer.create({
-#     first_name: "Bruce",
-#     last_name: "Wayne",
-#     biography: "I am the owner of Wayne Enterprise an international web development firm. I am also a freelance Back End Developer based in Mauritius.",
-#     phone_number: "+123456789",
-#     address: "Port Louis, Mauritius",
-#     website: "www.wayne.com",
-#     zoom: "wayne",
-#     github: "bwayne",
-#     skills: ["Java", "JavaScript", "Python", "C++", "Ruby"],
-#     photo: "app/assets/images/bruce_wayne.jpeg"
-#     },
-#     # photo: "app/assets/images/bruce_wayne.jpeg"
-# )
-# developer_3.photo.attach(io: URI.open('upload/bruce_wayne.jpeg'), filename: "bruce_wayne.jpeg", content_type: "image/jpeg")
+developer_3 = Developer.create({
+    first_name: "Bruce",
+    last_name: "Wayne",
+    biography: "I am the owner of Wayne Enterprise an international web development firm. I am also a freelance Back End Developer based in Mauritius.",
+    phone_number: "+123456789",
+    address: "Port Louis, Mauritius",
+    website: "www.wayne.com",
+    zoom: "wayne",
+    github: "bwayne",
+    skills: ["Java", "JavaScript", "Python", "C++", "Ruby"],
+    user_id: yeshna.id,
+    }
+    # photo: "app/assets/images/bruce_wayne.jpeg"
+)
+developer_3.photo.attach(io: URI.open('upload/bruce_wayne.jpeg'), filename: "bruce_wayne.jpeg", content_type: "image/jpeg")
 
 
-# # developer_4 = Developer.create({
-# #     first_name: "James",
-# #     last_name: "Bond",
-# #     biography: "Hi, I am Web Developer with 7 Years of experience as a freelancer around the globe.",
-# #     phone_number: "+123456789",
-# #     address: "Grand Baie, Mauritius",
-# #     website: "www.jamesbond.com",
-# #     zoom: "bond",
-# #     github: "jamesbond",
-# #     skills: ["JavaScript", "Python", "Ruby", "HTML", "CSS"],
-# #     photo: "app/assets/images/james_bond.jpeg"
-# #     }
-# # ])
-# #     # photo: "app/assets/images/james_bond.jpeg"
-# # }
-# # )
-# # developer_4.photo.attach(io: URI.open('upload/james_bond.jpeg'), filename: "james_bond.jpeg", content_type: "image/jpeg")
+developer_4 = Developer.create({
+    first_name: "James",
+    last_name: "Bond",
+    biography: "Hi, I am Web Developer with 7 Years of experience as a freelancer around the globe.",
+    phone_number: "+123456789",
+    address: "Grand Baie, Mauritius",
+    website: "www.jamesbond.com",
+    zoom: "bond",
+    github: "jamesbond",
+    skills: ["JavaScript", "Python", "Ruby", "HTML", "CSS"],
+    user_id: jp.id,
+    }
+)
+    # photo: "app/assets/images/james_bond.jpeg"
+
+developer_4.photo.attach(io: URI.open('upload/james_bond.jpeg'), filename: "james_bond.jpeg", content_type: "image/jpeg")
