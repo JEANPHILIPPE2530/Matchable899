@@ -3,7 +3,7 @@
     data-controller="chatroom-subscription"
     data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
         <% @chatroom.messages.each do |message| %>
-            <%= render 'message/message', message: message %>
+            <%= render 'messages/message', message: message %>
         <% end %>
     </div>
     <%= simple_form_for [@chatroom, @message], remote: true do |f| %>

@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   def create
-      @chatroom = Chatroom.find(params[:chatrooms_id])
+      @chatroom = Chatroom.find(params[:chatroom_id])
       @message = Message.new(message_params)
       @message.chatroom = @chatroom
       @message.user = current_user
@@ -11,6 +11,7 @@ class MessagesController < ApplicationController
           redirect_to chatroom_path(@chatroom, anchor: "message-#{@message.id}")
       else
           render 'chatrooms/show'
+      end
   end
 
   private

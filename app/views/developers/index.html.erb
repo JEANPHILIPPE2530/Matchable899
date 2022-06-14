@@ -15,7 +15,9 @@
     <% @developers.each do |developer| %>
       <%= link_to developer_path(developer) do %>
         <div class="card-product">
-          <%= cl_image_tag developer.photo.key%>
+          <% if developer.photo.attached? %>
+            <%= cl_image_tag developer.photo.key%>
+          <% end %>
           <div class="card-product-infos">
             <h2><%= developer.first_name %> <%= developer.last_name[0] %>.</h2>
             <% developer.skills.each do |s| %>
