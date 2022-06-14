@@ -1,0 +1,10 @@
+<div class="page-container">
+    <div>
+
+    <% @chatrooms.each do |chat| %>
+      <%  @match = chat.match %>
+      <%= link_to @match.company.name, chatroom_path(chat) %>
+    <% end %>
+
+    </div>
+</div>

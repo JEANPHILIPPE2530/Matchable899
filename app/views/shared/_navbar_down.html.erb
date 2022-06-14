@@ -20,11 +20,11 @@
   <% end %>
 
   <!-- chat -->
-  <a href="#">
+   <%= link_to chatrooms_path do %>
       <li class="nav-item p-2 ">
         <i class='bx bx-conversation' style="font-size: 30px;"></i>
       </li>
-  </a>
+  <% end %>
   <!-- user -->
   <%= link_to user_path(@user) do %>
     <li class="nav-item p-2 ">

@@ -1,8 +1,12 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :set_user
-
+  # before_action :set_chatroom
   private
+
+  # def set_chatroom
+  #   @chatroom = Chatroom.find_by(id: 4)#to_do_definir_comment_
+  # end
 
   def set_user
     if user_signed_in?

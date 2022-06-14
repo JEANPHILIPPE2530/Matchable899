@@ -6,6 +6,7 @@ require "open-uri"
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Message.destroy_all
 Chatroom.destroy_all
 Match.destroy_all
 Company.destroy_all
@@ -27,6 +28,12 @@ jean_philippe_auguste = User.create(
 # Company.destroy_all
 nad = User.create({email: "nad@test.com", password: "password2"})
 jp = User.create({email: "jp@test.com", password: "password4"})
+harry = User.create({email: "harry@test.com", password: "password4"})
+tony_stark  = User.create({email: "tony_stark@test.com", password: "password4"})
+bruce_wayne  = User.create({email: "bruce_wayne@test.com", password: "password4"})
+james_bond  = User.create({email: "james_bond@test.com", password: "password4"})
+
+
 
 
 require "open-uri"
@@ -175,7 +182,7 @@ company_1 = Company.new({
 # )
 # developer_3.photo.attach(io: URI.open('upload/bruce_wayne.jpeg'), filename: "bruce_wayne.jpeg", content_type: "image/jpeg")
 
-developer_1 = Developer.create({
+developer_4 = Developer.new({
     first_name: "Harry",
     last_name: "Potter",
     biography: "Hello, I am Web Developer with 2 Years of experience working with startups and specialized in JavaScript",
@@ -185,13 +192,13 @@ developer_1 = Developer.create({
     zoom: "harry.potter",
     github: "potter",
     skills: ["JavaScript", "HTML", "CSS"],
-    user_id: lorene.id,
-    }
-    # photo: "app/assets/images/harry_potter.jpg"
-)
-developer_1.photo.attach(io: URI.open('upload/harry_potter.jpg'), filename: "harry_potter.jpg", content_type: "image/jpg")
+    user: harry
+    })
+    file = URI.open('https://ca.slack-edge.com/T02NE0241-U03B57W70KG-6fba6d4e12ec-512')
+    developer_4.photo.attach(io: file, filename: 'harry.png', content_type: 'image/png')
+    developer_4.save
 
-developer_2 = Developer.create({
+developer_5 = Developer.new({
     first_name: "Tony",
     last_name: "Stark",
     biography: "The founder of Stark Enterprise and Freelancer for Web Dev Jobs for 15years. Interested in Jobs in Mauritius.",
@@ -201,13 +208,13 @@ developer_2 = Developer.create({
     zoom: "stark",
     github: "stark",
     skills: ["JavaScript", "Ruby", "React"],
-    user_id: nad.id,
-}
-    # photo: "app/assets/images/tony_stark.jpg"
-)
-developer_2.photo.attach(io: URI.open('upload/tony_stark.jpg'), filename: "tony_stark.jpg", content_type: "image/jpg")
+    user: tony_stark
+    })
+    file = URI.open('https://ca.slack-edge.com/T02NE0241-U03B57W70KG-6fba6d4e12ec-512')
+    developer_5.photo.attach(io: file, filename: 'tony.png', content_type: 'image/png')
+    developer_5.save
 
-developer_3 = Developer.create({
+developer_6 = Developer.new({
     first_name: "Bruce",
     last_name: "Wayne",
     biography: "I am the owner of Wayne Enterprise an international web development firm. I am also a freelance Back End Developer based in Mauritius.",
@@ -217,14 +224,14 @@ developer_3 = Developer.create({
     zoom: "wayne",
     github: "bwayne",
     skills: ["Java", "JavaScript", "Python", "C++", "Ruby"],
-    user_id: yeshna.id,
-    }
-    # photo: "app/assets/images/bruce_wayne.jpeg"
-)
-developer_3.photo.attach(io: URI.open('upload/bruce_wayne.jpeg'), filename: "bruce_wayne.jpeg", content_type: "image/jpeg")
+    user: bruce_wayne
+    })
+    file = URI.open('https://ca.slack-edge.com/T02NE0241-U03B57W70KG-6fba6d4e12ec-512')
+    developer_6.photo.attach(io: file, filename: 'bruce.png', content_type: 'image/png')
+    developer_6.save
 
 
-developer_4 = Developer.create({
+developer_7 = Developer.new({
     first_name: "James",
     last_name: "Bond",
     biography: "Hi, I am Web Developer with 7 Years of experience as a freelancer around the globe.",
@@ -234,13 +241,14 @@ developer_4 = Developer.create({
     zoom: "bond",
     github: "jamesbond",
     skills: ["JavaScript", "Python", "Ruby", "HTML", "CSS"],
-    user_id: jp.id,
-    }
-)
-    # photo: "app/assets/images/james_bond.jpeg"
+    user: james_bond
+    })
+    file = URI.open('https://ca.slack-edge.com/T02NE0241-U03B57W70KG-6fba6d4e12ec-512')
+    developer_7.photo.attach(io: file, filename: 'james.png', content_type: 'image/png')
+    developer_7.save
 
 
- developer_4 = Developer.new({
+ developer_8 = Developer.new({
      first_name: "Lorene",
      last_name: "Manampisoa",
      biography: "Hi, I am Web Developer with 7 Years of experience as a freelancer around the globe.",
@@ -252,8 +260,8 @@ developer_4 = Developer.create({
      user: lorene
      })
      file = URI.open('https://ca.slack-edge.com/T02NE0241-U03B57W70KG-6fba6d4e12ec-512')
-     developer_4.photo.attach(io: file, filename: 'lorene_manampisoa.png', content_type: 'image/png')
-     developer_4.save
+     developer_8.photo.attach(io: file, filename: 'lorene_manampisoa.png', content_type: 'image/png')
+     developer_8.save
 # #     }
 # # ])
 # #     # photo: "app/assets/images/james_bond.jpeg"
@@ -261,7 +269,7 @@ developer_4 = Developer.create({
 # # )
 # # developer_4.photo.attach(io: URI.open('upload/james_bond.jpeg'), filename: "james_bond.jpeg", content_type: "image/jpeg")
 
-developer_4.photo.attach(io: URI.open('upload/james_bond.jpeg'), filename: "james_bond.jpeg", content_type: "image/jpeg")
+#developer_4.photo.attach(io: URI.open('upload/james_bond.jpeg'), filename: "james_bond.jpeg", content_type: "image/jpeg")
 
 match_1 = Match.new({
   developer_id: developer_4.id,
@@ -269,7 +277,18 @@ match_1 = Match.new({
 })
 match_1.save
 
+match_2 = Match.new({
+  developer_id: developer_3.id,
+  company_id: company_3.id,
+})
+match_2.save
+
 chatroom_1 = Chatroom.new({
   match_id: match_1.id,
 })
 chatroom_1.save
+
+chatroom_2 = Chatroom.new({
+  match_id: match_2.id,
+})
+chatroom_2.save
