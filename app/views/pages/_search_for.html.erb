@@ -1,7 +1,22 @@
   <% if @user.role == "developer" %>
-    <h1>Hello, <%= @developer.first_name %>!</h1>
-      <%= link_to "View companies", companies_path, class: "buttons" %>
+    <div class="fade-in">
+      <h1 class="welcome-h1">Hello, <%= @developer.first_name %>!</h1>
+      <div class="welcome-photo">
+        <% if @developer.photo.attached? %>
+          <%= cl_image_tag @developer.photo.key, height: 200 %>
+        <% end %>
+      </div>
+      <%= link_to "Browse companies", companies_path, class: "welcome-button" %>
+      <%= link_to "View my matches", matches_path, class: "welcome-button" %>
+    </div>
   <% elsif @user.role == "company" %>
-    <h1>Welcome, <%= @company.name %>!</h1>
-    <%= link_to "View developers", developers_path, class: "buttons" %>
+    <div class="fade-in">
+      <h1 class="welcome-h1">Welcome, <%= @company.name %>!</h1>
+      <div class="welcome-photo">
+        <% if @company.photo.attached? %>
+          <%= cl_image_tag @company.photo.key, height: 200 %>
+        <% end %>
+      </div>
+      <%= link_to "Browse developers", developers_path, class: "welcome-button" %>
+    </div>
   <% end %>
