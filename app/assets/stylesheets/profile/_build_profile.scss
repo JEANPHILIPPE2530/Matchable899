@@ -38,8 +38,20 @@
   background-color: white;
   border-radius: 24px;
   margin-bottom: 50px;
+
 }
 
+.back-button{
+  width: 100%;
+  display: flex;
+  font-size: 20px;
+  justify-content: center;
+  background-color: white;
+  border-radius: 24px;
+  a {
+    text-decoration: none;
+  }
+}
 .login-button {
   // width: 60%;
   color: white;
