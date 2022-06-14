@@ -4,12 +4,13 @@ Rails.application.routes.draw do
 
   resources :companies, only: %i[index show new create] do
     resources :offers, only: %i[index new create]
+    resources :matches, only: %i[index create]
+
   end
   resources :offers, only: %i[edit update destroy]
 
   resources :developers
 
-  resources :matches, only: %i[index create]
 
   resources :chatrooms, only: %i[index show] do
     resources :messages, only: :create
@@ -18,10 +19,10 @@ Rails.application.routes.draw do
     # JP
   # --------- Start
   # get "/matches" => 'matches#show', as: :matches
-  post "matches/approve/developer/:id", to: "matches#approve", as: :approve_developer
-  post "matches/decline/developer/:id", to: "matches#decline", as: :decline_developer
-  post "matches/approve/company/:id", to: "matches#approve", as: :approve_company
-  post "matches/decline/company/:id", to: "matches#decline", as: :decline_company
+  # post "matches/approve/developer/:id", to: "matches#approve", as: :approve_developer
+  # post "matches/decline/developer/:id", to: "matches#decline", as: :decline_developer
+  # post "matches/approve/company/:id", to: "matches#approve", as: :approve_company
+  # post "matches/decline/company/:id", to: "matches#decline", as: :decline_company
   # post "get/full_profile/id" => "profile#profile", as: :full_profile
   # post "get/message/id" => "matches#profile", as: :message
   # --------- End

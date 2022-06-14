@@ -1,11 +1,12 @@
 import '../plugins/hammer.min.js'
+import { csrfToken } from "@rails/ujs"
 
 import { Controller } from "stimulus"
 
 const myMatchId = []
-let myJson = {}
 export default class extends Controller {
-    static targets = [ "profile" ]
+    static targets = [ "profile", "form" ]
+    static values = {companyId: Number}
 
     connect() {
         // this.outputTarget.textContent = 'Hello, from Card Swipe!'
@@ -45,36 +46,64 @@ export default class extends Controller {
                     p.classList.add('profile--match');
                     // console.log(p.innerHTML)
                     
-                    
                 } else if (posX < -thresholdMatch) {
                     p.classList.add('profile--next');
                 } else {
                     p.classList.add('profile--back');
                 }
                 const devIdMatchEl = document.querySelectorAll('.profile--match .card-dev-id')
-                devIdMatchEl.forEach(el => (myMatchId.includes(el.innerText)) ? console.log(el.innerText) : myMatchId.push(el.innerText))
+                devIdMatchEl.forEach(el => sendToMatchController(el.innerText))
             }
         });
     }
     
-    // const sendToMatchController = (myJson) => {
-    //         fetch('/matches', {
-    //                 method: 'POST',
-    //                 headers: {
-    //                         "Content-Type": "application/json",
-    //                         "Accept": "application/json"
-    //                     },
-    //                     body: JSON.stringify(myJson)
-    //                 })
-    //             }
+    const sendToMatchController =(element) => {
+        console.log(element)
+        console.log(this.formTarget)
+        // const form = document.getElementById('new_match')
+        const inputForm = document.getElementById('match_developer_id')
+        inputForm.value = element
+        this.formTarget.submit()
+        
+
+// export default class extends Controller {
+//     static targets = ["form"]
+
+//     connect() {
+//         console.log('remote-form connected')
+//     }
+
+//     // onPostSuccess(event) {
+//     //     console.log("success!");
+//     // }
+
+//     update(event) {
+//         event.preventDefault()
+//         console.log(this.element)
+//         Rails.fire(this.element, 'submit');
+//     }
+// }
+
+        // inputForm.value = element
+        // const data = { developer_id: element }
+        // console.log(JSON.stringify(data))
+        // fetch(`/companies/${this.companyIdValue}/matches`, {
+        //         method: 'POST',
+        //         mode: 'no-cors',
+        //         headers: {
+        //                 "X-Requested-With": "XMLHttpRequest",
+        //                 "Content-Type": "application/json",
+        //                 "Accept": "application/json",
+        //                 "X-CSRF-Token": csrfToken()
+        //             },
+        //             body: JSON.stringify(data)
+        //         })
+        
+    }
+
                 
                 this.profileTargets.forEach((p) => setupDragAndDrop(p));
-                
-
-        
- 
-    // window.onbeforeunload = myMatchId.forEach(data => myJson += `{user_id: ${data}},`);
-    // window.onbeforeunload = sendToMatchController(myJson);
+    // window.onbeforeunload = sendToMatchController(myMatchId);
     
     
 }
