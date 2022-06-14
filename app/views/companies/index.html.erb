@@ -1,11 +1,17 @@
-  <div class="page-container">
-    <% @companies.each do |c| %>
-      <div>
-        <h1><%= c.name %></h1>
-        <% if c.photo.attached? %>
-          <%= cl_image_tag c.photo.key, height: 250 %>
-        <% end %>
-        <p><%= c.address %></p>
-      </div>
+<div class="page-container">
+  <div class="fade-in" id="companies">
+    <% @companies.each do |company| %>
+      <%= link_to company_path(company) do %>
+        <div class="card-product">
+          <% if company.photo.attached? %>
+            <%= cl_image_tag company.photo.key%>
+          <% end %>
+          <div class="card-product-infos">
+            <h2><%= company.name %></h2>
+            <p><%= company.address %></p>
+          </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
+</div>
