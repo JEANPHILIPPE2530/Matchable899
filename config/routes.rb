@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :companies, only: %i[index show new create] do
-    resources :offers, only: %i[index new create]
     resources :matches, only: %i[index create]
 
   end

@@ -58,8 +58,8 @@ export default class extends Controller {
     }
     
     const sendToMatchController =(element) => {
-        console.log(element)
-        console.log(this.formTarget)
+        // console.log(element)
+        // console.log(this.formTarget)
         // const form = document.getElementById('new_match')
         const inputForm = document.getElementById('match_developer_id')
         inputForm.value = element

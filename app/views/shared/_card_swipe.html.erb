@@ -30,7 +30,15 @@
             </div>
         </div>
     </div>
-<% end %>
+    <% end %>
+<div class="" >
+    <%= simple_form_for([@company, @matches], 
+                        data: {swipe_target: "form",
+                        }) do |f| %>
+        <%= f.text_field :developer_id, input_html: { value: "" }, data: { swipe_target: "form" } %>
+        <%= f.button :submit %>
+    <% end %>
+</div>
 
 <!-- Company Cards -->
 <% elsif @user.role == "developer" %>
@@ -67,8 +75,8 @@
     <% end %>
 <% end %>
 <div class="" >
-    <%= simple_form_for([@company, @matches], 
-                        data: {swipe_target: "form",
+    <%= simple_form_for([@developer, @matches], 
+                        data: {swipe_developer_target: "form",
                         }) do |f| %>
         <%= f.text_field :developer_id, input_html: { value: "" }, data: { swipe_target: "form" } %>
         <%= f.button :submit %>
