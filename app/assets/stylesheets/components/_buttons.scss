@@ -13,3 +13,67 @@
     color: grey;
   }
 }
+
+.profile-save-button {
+  width: 100%;
+  background-color: white;
+  border-radius: 24px;
+  margin-bottom: 50px;
+
+}
+
+.back-button{
+  width: 90%;
+  display: flex;
+  font-size: 20px;
+  padding: 8px;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1);
+  border-radius: 24px;
+  a {
+    text-decoration: none;
+  }
+}
+
+.login-button {
+  color: white;
+  border-radius: 18px;
+  padding: 8px;
+  text-decoration: none;
+  border: 2px solid;
+}
+
+.log-out-button {
+  width: 90%;
+  background-color: white;
+  padding: 8px;
+  border: 1px solid lightgrey;
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1);
+  a {
+    text-decoration: none;
+    color: red;
+    font-size: larger;
+    font-weight: 900;
+  }
+}
+
+.settings-buttons {
+  width: 90%;
+  background-color: white;
+  padding: 8px;
+  border: 1px solid lightgrey;
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1);
+  a {
+    text-decoration: none;
+    color: black;
+    font-size: larger;
+    font-weight: 900;
+  }
+}

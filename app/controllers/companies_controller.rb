@@ -4,7 +4,6 @@ class CompaniesController < ApplicationController
     if params[:query].present?
       sql_query = " \
       companies.name @@ :query \
-      OR companies.offers @@ :query \
           "
       @companies = Company.where(sql_query, query: "%#{params[:query]}%")
     else
