@@ -1,17 +1,14 @@
-<div class="container">
-  <div class="row justify-content-center pt-3">
-    <div class="col-sm-8">
+<div class="page-container">
+  <%= form_tag developers_path, :class => "search-bar", method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control search-input",
+      placeholder: "Find a developer"
+    %>
+    <%= submit_tag "Search", class: "btn btn-light search-btn",:type => :image, :src=> image_path("glass.png") %>
+  <% end %>
 
-      <%= form_tag developers_path, :class => "search-bar", method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control search-input",
-          placeholder: "Find a developer"
-        %>
-        <%= submit_tag "Search", class: "btn btn-light search-btn",:type => :image, :src=> image_path("glass.png") %>
-      <% end %>
-
-  <div id="developers">
+  <div class="fade-in" id="developers">
     <% @developers.each do |developer| %>
       <%= link_to developer_path(developer) do %>
         <div class="card-product">
