@@ -28,6 +28,12 @@ jean_philippe_auguste = User.create(
 # Company.destroy_all
 nad = User.create({email: "nad@test.com", password: "password2"})
 jp = User.create({email: "jp@test.com", password: "password4"})
+harry = User.create({email: "harry@test.com", password: "password4"})
+tony_stark  = User.create({email: "tony_stark@test.com", password: "password4"})
+bruce_wayne  = User.create({email: "bruce_wayne@test.com", password: "password4"})
+james_bond  = User.create({email: "james_bond@test.com", password: "password4"})
+
+
 
 
 require "open-uri"
