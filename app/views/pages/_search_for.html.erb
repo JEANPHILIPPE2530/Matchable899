@@ -6,8 +6,8 @@
           <%= cl_image_tag @developer.photo.key, height: 200 %>
         <% end %>
       </div>
-      <%= link_to "Browse companies", companies_path, class: "welcome-button" %>
-      <%= link_to "View my matches", matches_path, class: "welcome-button" %>
+      <%= link_to "Browse companies", companies_path, class: "choice-button" %>
+      <%= link_to "View my matches", matches_path, class: "choice-button" %>
     </div>
   <% elsif @user.role == "company" %>
     <div class="fade-in">
@@ -17,6 +17,6 @@
           <%= cl_image_tag @company.photo.key, height: 200 %>
         <% end %>
       </div>
-      <%= link_to "Browse developers", developers_path, class: "welcome-button" %>
+      <%= link_to "Browse developers", developers_path, class: "choice-button" %>
     </div>
   <% end %>

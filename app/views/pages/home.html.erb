@@ -1,9 +1,9 @@
-  <% if user_signed_in? %>
-    <% if current_user.role.nil? %>
-      <%= render 'choice' %>
-    <% else %>
-      <%= render 'search_for' %>
-    <% end %>
-    <% else %>
-    <%= render 'welcome' %>
+<% if user_signed_in? %>
+  <% if current_user.role.nil? %>
+    <%= render 'choice' %>
+  <% else %>
+    <%= render 'search_for' %>
   <% end %>
+  <% else %>
+  <%= render 'welcome' %>
+<% end %>

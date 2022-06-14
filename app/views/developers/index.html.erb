@@ -8,11 +8,13 @@
     <%= submit_tag "Search", class: "btn btn-light search-btn",:type => :image, :src=> image_path("glass.png") %>
   <% end %>
 
-  <div class="fade-in" id="developers">
+  <div id="developers">
     <% @developers.each do |developer| %>
       <%= link_to developer_path(developer) do %>
         <div class="card-product">
-          <%= cl_image_tag developer.photo.key%>
+          <% if developer.photo.attached? %>
+            <%= cl_image_tag developer.photo.key%>
+          <% end %>
           <div class="card-product-infos">
             <h2><%= developer.first_name %> <%= developer.last_name[0] %>.</h2>
             <% developer.skills.each do |s| %>
