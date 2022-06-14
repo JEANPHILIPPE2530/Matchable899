@@ -1,18 +1,5 @@
-<%# <div class="phone"> %>
-<%# if @company.photo.attached? %>
-  <%# cl_image_tag @company.photo.key, height: 500 %>
-<%# end %>
-<%# <br> %>
-<%# @company.name %>
-<%# <br> %>
-<%# @company.description %>
-<%# </div> %>
-
-    <%= render 'shared/company/myprofile' %>
-    <br>
-    <div class= "back-button">
-    <%# <i class='bx bx-arrow-back' ></i> %>
-    <%=  link_to "Back", companies_path %><br />
-    </div>
-
-    <br>
+<div class="page-container">
+  <%= render 'shared/company/myprofile' %>
+  <br>
+  <%=  link_to "Back", companies_path, class: "back-button" %><br />
+</div>

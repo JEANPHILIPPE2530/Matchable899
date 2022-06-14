@@ -1,4 +1,15 @@
 <div class="page-container">
+  <div class="search-box">
+    <%= form_tag companies_path, :class => "search-bar", method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control search-input",
+        placeholder: "Find a company"
+      %>
+      <%= submit_tag "Search", class: "btn btn-light search-btn",:type => :image, :src=> image_path("glass.png") %>
+    <% end %>
+  </div>
+
   <div id="companies">
     <% @companies.each do |company| %>
       <%= link_to company_path(company) do %>

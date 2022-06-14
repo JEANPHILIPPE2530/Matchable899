@@ -1,12 +1,14 @@
 <div class="page-container">
-  <%= form_tag developers_path, :class => "search-bar", method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control search-input",
-      placeholder: "Find a developer"
-    %>
-    <%= submit_tag "Search", class: "btn btn-light search-btn",:type => :image, :src=> image_path("glass.png") %>
-  <% end %>
+  <div class="search-box">
+    <%= form_tag developers_path, :class => "search-bar", method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control search-input",
+        placeholder: "Find a developer"
+      %>
+      <%= submit_tag "Search", class: "btn btn-light search-btn",:type => :image, :src=> image_path("glass.png") %>
+    <% end %>
+  </div>
 
   <div id="developers">
     <% @developers.each do |developer| %>
@@ -18,7 +20,7 @@
             <%= image_tag("default-img") %>
           <% end %>
           <div class="card-product-infos">
-            <h2><%= developer.first_name %> <%= developer.last_name[0] %>.</h2>
+            <h2><%= developer.first_name %> <%= developer.last_name %></h2>
             <% developer.skills.each do |s| %>
               <p><%= s %></p>
             <% end %>
