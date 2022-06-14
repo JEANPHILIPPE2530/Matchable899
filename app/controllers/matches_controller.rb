@@ -16,19 +16,32 @@ class MatchesController < ApplicationController
         # @matches = Developer.all
       @developers = Developer.all
       @companies = Company.all
+      @company = Company.find(params[:company_id])
+      @matches = Match.new
+  
       #end
     end
 
     def create
-      raise
-      # @matches = Matches.new(match_params)
+      @developer = Developer.find(params[:match][:developer_id])
+      @company  = Company.find(params[:company_id])
+      @matches = Match.create!(developer_id: @developer.id, company_id: @company.id)
+      respond_to do |format|
+        if @matches.save
+          format.html { redirect_to company_matches_path(@company) }
+          # format.json # Follow the classic Rails flow and look for a create.json view
+        else
+          format.html { render "match/create" }
+          # format.json # Follow the classic Rails flow and look for a create.json view
+        end
+      end
     end
 
     private
 
-    # def match_params
-    #   params.require(:user).permit(user_id)
-    # end
+    def match_params
+      params.require(:user).permit(:user_id)
+    end
 end
 
 #   # JP
