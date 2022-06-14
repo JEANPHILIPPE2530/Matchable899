@@ -1,17 +1,9 @@
-<div class="choice">
-  <%= link_to new_developer_path do %>
-    <div class="buttons">
-      <p>Developer</p>
-    </div>
-  <% end %>
+  <div>
+    <%= link_to new_developer_path, class: "choice-button" do %>
+        <h1>Developer</h1>
+    <% end %>
 
-  <%= link_to new_company_path do %>
-    <div class="buttons">
-      <p>Company</p>
-    </div>
-  <% end %>
-</div>
-
-<div class="log_out">
-  <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-</div>
+    <%= link_to new_company_path, class: "choice-button" do %>
+        <h1>Company</h1>
+    <% end %>
+  </div>

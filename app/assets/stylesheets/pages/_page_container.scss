@@ -3,9 +3,13 @@
   flex-direction: column;
   padding: 16px;
   justify-content: center;
+  text-align: center;
   overflow-y: scroll;
   h1 {
     color: white;
     font-weight: bolder;
+  }
+  a {
+    text-decoration: none;
   }
 }
