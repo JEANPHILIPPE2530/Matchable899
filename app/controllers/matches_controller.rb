@@ -16,23 +16,43 @@ class MatchesController < ApplicationController
         # @matches = Developer.all
       @developers = Developer.all
       @companies = Company.all
-      @company = Company.find(params[:company_id])
+      if current_user.role == "company" 
+        @company = Company.find(params[:company_id])
+      elsif current_user.role == "developer"
+        @developer = Developer.find(params[:developer_id])
+      end
       @matches = Match.new
   
       #end
     end
 
     def create
-      @developer = Developer.find(params[:match][:developer_id])
-      @company  = Company.find(params[:company_id])
-      @matches = Match.create!(developer_id: @developer.id, company_id: @company.id)
-      respond_to do |format|
-        if @matches.save
-          format.html { redirect_to company_matches_path(@company) }
-          # format.json # Follow the classic Rails flow and look for a create.json view
-        else
-          format.html { render "match/create" }
-          # format.json # Follow the classic Rails flow and look for a create.json view
+      @user.role == "developer" ? @developer = Developer.find(params[:developer_id]) : @developer = Developer.find(params[:match][:developer_id])
+      @user.role == "developer" ? @company = Company.find(params[:match][:company_id]) : @company  = Company.find(params[:company_id])
+      
+      if @user.role == "company"
+
+        @matches = Match.create!(developer_id: @developer.id, company_id: @company.id)
+        respond_to do |format|
+          if @matches.save
+            format.html { redirect_to company_matches_path(@company) }
+            # format.json # Follow the classic Rails flow and look for a create.json view
+          else
+            format.html { render "match/create" }
+            # format.json # Follow the classic Rails flow and look for a create.json view
+          end
+        end
+
+      elsif @user.role == "developer" 
+        @matches = Match.create!(company_id: @company.id, developer_id: @developer.id)
+        respond_to do |format|
+          if @matches.save
+            format.html { redirect_to developer_matches_path(@developer) }
+            # format.json # Follow the classic Rails flow and look for a create.json view
+          else
+            format.html { render "match/create" }
+            # format.json # Follow the classic Rails flow and look for a create.json view
+          end
         end
       end
     end

@@ -31,7 +31,7 @@
         </div>
     </div>
     <% end %>
-<div class="" >
+<div class="d-none" >
     <%= simple_form_for([@company, @matches], 
                         data: {swipe_target: "form",
                         }) do |f| %>
@@ -43,14 +43,14 @@
 <!-- Company Cards -->
 <% elsif @user.role == "developer" %>
     <% @companies.each do |c| %>
-    <div class="profile" data-swipe-target="profile">
+    <div class="profile" data-swiped-target="profiled">
         <div class="card-header">
             <div class="card-cover" style="background-image: url('https://images.unsplash.com/photo-1653764828214-a12497459a96?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')"></div>
             <% if c.photo.attached? %>
                 <%= cl_image_tag c.photo.key, class: "card-avatar" %>
             <% end %>
             <h1 class="card-fullname"><%= c.name %></h1>
-            <p class="d-none card-dev-id"><%= c.id %></p>
+            <p class="d-none card-comp-id"><%= c.id %></p>
             <h2 class="card-jobtitle">Company</h2>
         </div>
         <div class="card-frame">
@@ -74,11 +74,11 @@
     </div>
     <% end %>
 <% end %>
-<div class="" >
+<div class="d-none" >
     <%= simple_form_for([@developer, @matches], 
-                        data: {swipe_developer_target: "form",
+                        data: {swiped_target: "form",
                         }) do |f| %>
-        <%= f.text_field :developer_id, input_html: { value: "" }, data: { swipe_target: "form" } %>
+        <%= f.text_field :company_id, input_html: { value: "" }, data: { swiped_target: "form" } %>
         <%= f.button :submit %>
     <% end %>
 </div>
