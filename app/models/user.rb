@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise  :database_authenticatable, :registerable,
           :recoverable, :rememberable, :validatable
 
-  has_one :company
-  has_one :developer
+  has_one :company, dependent: :destroy
+  has_one :developer, dependent: :destroy
 # JP
 # --------- Start
   # validates :email, presence: true, uniqueness: true
