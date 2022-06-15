@@ -1,11 +1,53 @@
-<div id="message-<%= message.id %>">
-    <small>
-    <% if message.user.role == 'developer' %>
-      <strong><%= message.user.developer.first_name %></strong>
-    <% elsif message.user.role == 'company' %>
-      <strong><%= message.user.company.name %></strong>
+    <% if message.user == current_user %>
+
+      <div class="message message-me new", id="message-<%= message.id %>">
+        <% if message.user.role == 'developer' %>
+          <strong><%= message.user.developer.first_name %></strong>
+          <div class="avatar">
+            <% if message.user.developer.photo.attached? %>
+              <%= cl_image_tag message.user.developer.photo.key %>
+            <% else %>
+              <%= image_tag("default-img") %>
+            <% end %>
+          </div>
+        <% elsif message.user.role == 'company' %>
+          <strong><%= message.user.company.name %></strong>
+          <div class="avatar">
+            <% if message.user.company.photo.attached? %>
+              <%= cl_image_tag message.user.company.photo.key %>
+            <% else %>
+              <%= image_tag("default-company") %>
+            <% end %>
+          </div>
+        <% end %>
+        <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+        <p><%= message.content %></p>
+      </div>
+
+    <% else %>
+
+      <div class="message new", id="message-<%= message.id %>">
+        <% if message.user.role == 'developer' %>
+          <strong><%= message.user.developer.first_name %></strong>
+          <div class="avatar">
+            <% if message.user.developer.photo.attached? %>
+              <%= cl_image_tag message.user.developer.photo.key %>
+            <% else %>
+              <%= image_tag("default-img") %>
+            <% end %>
+          </div>
+        <% elsif message.user.role == 'company' %>
+          <strong><%= message.user.company.name %></strong>
+          <div class="avatar">
+            <% if message.user.company.photo.attached? %>
+              <%= cl_image_tag message.user.company.photo.key %>
+            <% else %>
+              <%= image_tag("default-company") %>
+            <% end %>
+          </div>
+        <% end %>
+        <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+        <p><%= message.content %></p>
+      </div>
+
     <% end %>
-      <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-    </small>
-    <p><%= message.content %></p>
-</div>

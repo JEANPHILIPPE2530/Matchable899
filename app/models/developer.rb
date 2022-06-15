@@ -12,4 +12,8 @@ class Developer < ApplicationRecord
   validates :website, presence: true
   validates :github, presence: true
   SKILLS = ['Product Designer', 'Web Designer', 'UX Design ', 'Graphics Designer', 'Full-Stack Developer', 'Developer']
+
+  def name
+    return "#{first_name} #{last_name}"
+  end
 end
