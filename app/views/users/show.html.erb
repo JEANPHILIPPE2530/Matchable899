@@ -1,12 +1,14 @@
 <div class="page-container">
-  <% if @user.role == 'company' %>
-    <%= render 'shared/company/myprofile' %>
-  <% elsif @user.role == 'developer' %>
-    <%= render 'shared/developer/myprofile' %>
-
-  <% end %>
-  <br>
+  <div>
+    <% if @user.role == 'company' %>
+      <%= render 'shared/company/myprofile' %>
+    <% elsif @user.role == 'developer' %>
+      <%= render 'shared/developer/myprofile' %>
+    <% end %>
+  </div>
+  <div class="user-buttons">
     <%= link_to "Edit details", edit_user_registration_path, class: "settings-buttons" %>
-  <br>
+    <br>
     <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "log-out-button" %>
+  </div>
 </div>

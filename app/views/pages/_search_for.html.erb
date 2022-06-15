@@ -4,7 +4,7 @@
       <h1 class="welcome-h1">Hello, <%= @developer.first_name %>!</h1>
       <div class="welcome-photo">
         <% if @developer.photo.attached? %>
-          <%= cl_image_tag @developer.photo.key, height: 200 %>
+          <%= cl_image_tag @developer.photo.key %>
         <% end %>
       </div>
       <%= link_to "Browse companies", companies_path, class: "choice-button" %>
