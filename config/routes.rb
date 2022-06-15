@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
+  # get 'errors/not_found'
+  # get 'errors/internal_server_error'
   devise_for :users
+
+  match "/404", to: "errors#not_found", via: :all
+  match "/500", to: "errors#internal_server_error", via: :all
+
   root to: 'pages#home'
 
   resources :companies, only: %i[index show new create] do
