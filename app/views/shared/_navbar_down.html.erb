@@ -12,12 +12,19 @@
       </li>
   </a>
     <!-- Matchable -->
-
-  <%= link_to companies_path do %>
-      <li class="nav-item p-2 ">
-        <i class='bx bxl-gmail' style="font-size: 30px;"></i>
-      </li>
-  <% end %>
+    <% if @user.role == "company" %>  
+      <%= link_to company_matches_path(@company) do %>
+          <li class="nav-item p-2 ">
+            <i class='bx bxl-gmail' style="font-size: 30px;"></i>
+          </li>
+      <% end %>
+    <% elsif @user.role == "developer" %>     
+      <%= link_to developer_matches_path(@developer) do %>
+          <li class="nav-item p-2 ">
+            <i class='bx bxl-gmail' style="font-size: 30px;"></i>
+          </li>
+      <% end %>
+    <% end %>
 
   <!-- chat -->
    <%= link_to chatrooms_path do %>

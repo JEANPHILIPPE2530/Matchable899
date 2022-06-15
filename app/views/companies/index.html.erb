@@ -16,6 +16,8 @@
         <div class="card-product">
           <% if company.photo.attached? %>
             <%= cl_image_tag company.photo.key%>
+          <% else %>
+            <%= image_tag("default-company") %>
           <% end %>
           <div class="card-product-infos">
             <h2><%= company.name %></h2>
