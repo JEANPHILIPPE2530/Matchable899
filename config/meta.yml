@@ -1,0 +1,5 @@
+meta_product_name: "Matchable"
+meta_title: "Matchable - Matching Companies and Developers"
+meta_description: "Social Media App that enables developers to connect with recruiting companies."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
