@@ -2,8 +2,11 @@
     <div>
 
     <% @chatrooms.each do |chat| %>
-      <%  @match = chat.match %>
-      <%= link_to @match.company.name, chatroom_path(chat) %>
+     <% if @user.role == "developer" %>
+      <%= link_to chat.match.company.name, chatroom_path(chat) %>
+      <% elsif @user.role == "company" %>
+        <%= link_to chat.match.developer.name, chatroom_path(chat) %>
+      <% end %>
     <% end %>
 
     </div>

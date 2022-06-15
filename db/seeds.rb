@@ -13,7 +13,7 @@ Company.destroy_all
 Developer.destroy_all
 User.destroy_all
 lorene = User.create(
-    {email: "lorene@test.com", password: "password1"}
+    {email: "lorene@test.com", password: "password1", role: "company"}
 )
 yeshna = User.create(
   {email: "yeshna@test.com", password: "password1"}
@@ -22,7 +22,7 @@ basile = User.create(
   {email: "basile@test.com", password: "password1"}
 )
 jean_philippe_auguste = User.create(
-  {email: "jean_philippe_auguste@test.com", password: "password1"}
+  {email: "jean_philippe_auguste@test.com", password: "password1", role: "developer"}
 )
 
 # Company.destroy_all
@@ -50,7 +50,7 @@ company_1 = Company.new({
     website: "www.google.com",
     zoom: "google.recruit",
     phone_number: "+123456789",
-    user: lorene
+    user: bruce_wayne
     })
     file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png')
     company_1.photo.attach(io: file, filename: 'google.png', content_type: 'image/png')
@@ -78,7 +78,7 @@ company_1 = Company.new({
      website: "www.slack.com",
      zoom: "slack.recruit",
      phone_number: "+123456789",
-     user: lorene
+     user: tony_stark
      })
      file = URI.open('https://helios-i.mashable.com/imagery/articles/047UsVLCrupUmmsuitpn1nw/hero-image.fill.size_1248x702.v1623374965.png')
      company_2.photo.attach(io: file, filename: 'slack.png', content_type: 'image/png')
@@ -112,7 +112,7 @@ company_1 = Company.new({
      website: "www.github.com",
      zoom: "github.recruit",
      phone_number: "+123456789",
-     user: lorene
+     user: nad
  })
  file = URI.open('https://github.githubassets.com/images/modules/logos_page/Octocat.png')
  company_4.photo.attach(io: file, filename: 'github.png', content_type: 'image/png')
@@ -123,40 +123,40 @@ company_1 = Company.new({
 # Developer.create([
 #     {
 
- developer_1 = Developer.new({
-     first_name: "Basile",
-     last_name: "Marquefave",
-     biography: "Hello, I am Web Developer with 2 Years of experience working with startups and specialized in JavaScript",
-     phone_number: "+123456789",
-     address: "vacoas, Mauritius",
-     website: "www.harrypotter.com",
-     zoom: "harry.potter",
-     github: "potter",
-     skills: ["JavaScript", "HTML", "CSS"],
-     user: basile
-     })
-     file = URI.open('https://ca.slack-edge.com/T02NE0241-UA3C34C9Y-5130922e9939-512')
-     developer_1.photo.attach(io: file, filename: 'basile_marquefave.png', content_type: 'image/png')
-     developer_1.save!
-# }
-# )
-# developer_1.photo.attach(io: URI.open('upload/harry_potter.jpg'), filename: "harry_potter.jpg", content_type: "image/jpg")
+#  developer_1 = Developer.new({
+#      first_name: "Basile",
+#      last_name: "Marquefave",
+#      biography: "Hello, I am Web Developer with 2 Years of experience working with startups and specialized in JavaScript",
+#      phone_number: "+123456789",
+#      address: "vacoas, Mauritius",
+#      website: "www.harrypotter.com",
+#      zoom: "harry.potter",
+#      github: "potter",
+#      skills: ["JavaScript", "HTML", "CSS"],
+#      user: basile
+#      })
+#      file = URI.open('https://ca.slack-edge.com/T02NE0241-UA3C34C9Y-5130922e9939-512')
+#      developer_1.photo.attach(io: file, filename: 'basile_marquefave.png', content_type: 'image/png')
+#      developer_1.save!
+# # }
+# # )
+# # developer_1.photo.attach(io: URI.open('upload/harry_potter.jpg'), filename: "harry_potter.jpg", content_type: "image/jpg")
 
- developer_2 = Developer.new({
-     first_name: "Yeshna",
-     last_name: "Domah",
-     biography: "The founder of Stark Enterprise and Freelancer for Web Dev Jobs for 15years. Interested in Jobs in Mauritius.",
-     phone_number: "+123456789",
-     address: "St Pierre, Mauritius",
-     website: "www.stark.com",
-     zoom: "stark",
-     github: "stark",
-     skills: ["JavaScript", "Ruby", "React"],
-     user: yeshna
-    })
-     file = URI.open('https://ca.slack-edge.com/T02NE0241-U03AHQE9JNB-57ceb33b2093-512')
-     developer_2.photo.attach(io: file, filename: 'yeshna_domah.png', content_type: 'image/png')
-     developer_2.save
+#  developer_2 = Developer.new({
+#      first_name: "Yeshna",
+#      last_name: "Domah",
+#      biography: "The founder of Stark Enterprise and Freelancer for Web Dev Jobs for 15years. Interested in Jobs in Mauritius.",
+#      phone_number: "+123456789",
+#      address: "St Pierre, Mauritius",
+#      website: "www.stark.com",
+#      zoom: "stark",
+#      github: "stark",
+#      skills: ["JavaScript", "Ruby", "React"],
+#      user: yeshna
+#     })
+#      file = URI.open('https://ca.slack-edge.com/T02NE0241-U03AHQE9JNB-57ceb33b2093-512')
+#      developer_2.photo.attach(io: file, filename: 'yeshna_domah.png', content_type: 'image/png')
+#      developer_2.save
 #     # photo: "app/assets/images/tony_stark.jpg"
 # )
 # developer_2.photo.attach(io: URI.open('upload/tony_stark.jpg'), filename: "tony_stark.jpg", content_type: "image/jpg")
@@ -198,70 +198,70 @@ developer_4 = Developer.new({
     developer_4.photo.attach(io: file, filename: 'harry.png', content_type: 'image/png')
     developer_4.save
 
-developer_5 = Developer.new({
-    first_name: "Tony",
-    last_name: "Stark",
-    biography: "The founder of Stark Enterprise and Freelancer for Web Dev Jobs for 15years. Interested in Jobs in Mauritius.",
-    phone_number: "+123456789",
-    address: "St Pierre, Mauritius",
-    website: "www.stark.com",
-    zoom: "stark",
-    github: "stark",
-    skills: ["JavaScript", "Ruby", "React"],
-    user: tony_stark
-    })
-    file = URI.open('https://ca.slack-edge.com/T02NE0241-U03B57W70KG-6fba6d4e12ec-512')
-    developer_5.photo.attach(io: file, filename: 'tony.png', content_type: 'image/png')
-    developer_5.save
+# developer_5 = Developer.new({
+#     first_name: "Tony",
+#     last_name: "Stark",
+#     biography: "The founder of Stark Enterprise and Freelancer for Web Dev Jobs for 15years. Interested in Jobs in Mauritius.",
+#     phone_number: "+123456789",
+#     address: "St Pierre, Mauritius",
+#     website: "www.stark.com",
+#     zoom: "stark",
+#     github: "stark",
+#     skills: ["JavaScript", "Ruby", "React"],
+#     user: tony_stark
+#     })
+#     file = URI.open('https://ca.slack-edge.com/T02NE0241-U03B57W70KG-6fba6d4e12ec-512')
+#     developer_5.photo.attach(io: file, filename: 'tony.png', content_type: 'image/png')
+#     developer_5.save
 
-developer_6 = Developer.new({
-    first_name: "Bruce",
-    last_name: "Wayne",
-    biography: "I am the owner of Wayne Enterprise an international web development firm. I am also a freelance Back End Developer based in Mauritius.",
-    phone_number: "+123456789",
-    address: "Port Louis, Mauritius",
-    website: "www.wayne.com",
-    zoom: "wayne",
-    github: "bwayne",
-    skills: ["Java", "JavaScript", "Python", "C++", "Ruby"],
-    user: bruce_wayne
-    })
-    file = URI.open('https://ca.slack-edge.com/T02NE0241-U03B57W70KG-6fba6d4e12ec-512')
-    developer_6.photo.attach(io: file, filename: 'bruce.png', content_type: 'image/png')
-    developer_6.save
-
-
-developer_7 = Developer.new({
-    first_name: "James",
-    last_name: "Bond",
-    biography: "Hi, I am Web Developer with 7 Years of experience as a freelancer around the globe.",
-    phone_number: "+123456789",
-    address: "Grand Baie, Mauritius",
-    website: "www.jamesbond.com",
-    zoom: "bond",
-    github: "jamesbond",
-    skills: ["JavaScript", "Python", "Ruby", "HTML", "CSS"],
-    user: james_bond
-    })
-    file = URI.open('https://ca.slack-edge.com/T02NE0241-U03B57W70KG-6fba6d4e12ec-512')
-    developer_7.photo.attach(io: file, filename: 'james.png', content_type: 'image/png')
-    developer_7.save
+# developer_6 = Developer.new({
+#     first_name: "Bruce",
+#     last_name: "Wayne",
+#     biography: "I am the owner of Wayne Enterprise an international web development firm. I am also a freelance Back End Developer based in Mauritius.",
+#     phone_number: "+123456789",
+#     address: "Port Louis, Mauritius",
+#     website: "www.wayne.com",
+#     zoom: "wayne",
+#     github: "bwayne",
+#     skills: ["Java", "JavaScript", "Python", "C++", "Ruby"],
+#     user: bruce_wayne
+#     })
+#     file = URI.open('https://ca.slack-edge.com/T02NE0241-U03B57W70KG-6fba6d4e12ec-512')
+#     developer_6.photo.attach(io: file, filename: 'bruce.png', content_type: 'image/png')
+#     developer_6.save
 
 
- developer_8 = Developer.new({
-     first_name: "Lorene",
-     last_name: "Manampisoa",
-     biography: "Hi, I am Web Developer with 7 Years of experience as a freelancer around the globe.",
-     phone_number: "+123456789",
-     address: "Grand Baie, Mauritius",
-     website: "www.jamesbond.com",     zoom: "bond",
-     github: "jamesbond",
-     skills: ["JavaScript", "Python", "Ruby", "HTML", "CSS"],
-     user: lorene
-     })
-     file = URI.open('https://ca.slack-edge.com/T02NE0241-U03B57W70KG-6fba6d4e12ec-512')
-     developer_8.photo.attach(io: file, filename: 'lorene_manampisoa.png', content_type: 'image/png')
-     developer_8.save
+# developer_7 = Developer.new({
+#     first_name: "James",
+#     last_name: "Bond",
+#     biography: "Hi, I am Web Developer with 7 Years of experience as a freelancer around the globe.",
+#     phone_number: "+123456789",
+#     address: "Grand Baie, Mauritius",
+#     website: "www.jamesbond.com",
+#     zoom: "bond",
+#     github: "jamesbond",
+#     skills: ["JavaScript", "Python", "Ruby", "HTML", "CSS"],
+#     user: james_bond
+#     })
+#     file = URI.open('https://ca.slack-edge.com/T02NE0241-U03B57W70KG-6fba6d4e12ec-512')
+#     developer_7.photo.attach(io: file, filename: 'james.png', content_type: 'image/png')
+#     developer_7.save
+
+
+#  developer_8 = Developer.new({
+#      first_name: "Lorene",
+#      last_name: "Manampisoa",
+#      biography: "Hi, I am Web Developer with 7 Years of experience as a freelancer around the globe.",
+#      phone_number: "+123456789",
+#      address: "Grand Baie, Mauritius",
+#      website: "www.jamesbond.com",     zoom: "bond",
+#      github: "jamesbond",
+#      skills: ["JavaScript", "Python", "Ruby", "HTML", "CSS"],
+#      user: lorene
+#      })
+#      file = URI.open('https://ca.slack-edge.com/T02NE0241-U03B57W70KG-6fba6d4e12ec-512')
+#      developer_8.photo.attach(io: file, filename: 'lorene_manampisoa.png', content_type: 'image/png')
+#      developer_8.save
 # #     }
 # # ])
 # #     # photo: "app/assets/images/james_bond.jpeg"
