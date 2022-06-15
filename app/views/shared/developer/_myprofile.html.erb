@@ -5,7 +5,7 @@
           <%= cl_image_tag @developer.photo.key, class: "myprofile-avatar"  %>
         <% end %>
         <h2 class="myprofile-fullname"> <%= @developer.first_name %> <%= @developer.last_name %></h2>
-        <h2 class="myprofile-jobtitle">Developer</h2>
+        <h2 class="myprofile-jobtitle"><%= @developer.skills[1] %></h2>
     </div>
     <div class="myprofile-frame">
         <div class="myprofile-section action" id="about">
@@ -13,11 +13,11 @@
                 <div class="myprofile-subtitle">ABOUT</div>
                 <p class="myprofile-desc"><%= @developer.biography %></p>
             </div>
-            <div class="myprofile-icons">
+            <%# <div class="myprofile-icons">
                 <% @developer.skills.each do |skill| %>
-                    <p><%= skill %></p>
-                <% end %>
-            </div>
+                  <%#  <p><%= skill %></p>
+              <%#  <% end %>
+            <%# </div> %>
         </div>
         <%# <div class="myprofile-section" id="experience">
             <div class="myprofile-content">
