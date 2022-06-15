@@ -1,6 +1,5 @@
 <div class="page-container">
     <div>
-
     <% @chatrooms.each do |chat| %>
      <% if @user.role == "developer" %>
       <%= link_to chat.match.company.name, chatroom_path(chat) %>
@@ -8,6 +7,5 @@
         <%= link_to chat.match.developer.name, chatroom_path(chat) %>
       <% end %>
     <% end %>
-
     </div>
 </div>
