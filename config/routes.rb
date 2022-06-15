@@ -8,8 +8,9 @@ Rails.application.routes.draw do
   end
   resources :offers, only: %i[edit update destroy]
 
-  resources :developers
-
+  resources :developers do
+    resources :matches, only: %i[index create]
+  end
 
   resources :chatrooms, only: %i[index show] do
     resources :messages, only: :create

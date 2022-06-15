@@ -4,7 +4,7 @@
 <%# <% @matches_company.each do |company| %>
 <%# <%= company.name %>
 <%# <% end %>
-  <div class="text">
+  <div class="guidance">
       <div>
         <P>Match</P>
       </div>
@@ -17,10 +17,19 @@
         </div>
       </div>
   </div>
+  <%# <div> %>
+    <%# <%= render 'shared/card_swipe' %> 
+  
+    <% if @user.role == "company"%>
+      <div id="profiles" data-controller="swipe" data-swipe-company-id-value="<%= @company.id %>">
+      <%= render 'shared/card_swipe' %>
+      </div>
+    <% elsif @user.role == "developer" %>
+      <div id="profiles" data-controller="swiped" data-swipe-developer-id-value="<%= @developer.id %>" >
+        <%= render 'shared/card_swipe' %>
+      </div>
+    <% end %>
 
-  <div id="profiles" data-controller="swipe" data-swipe-company-id-value="<%= @company.id %>">
-    <%= render 'shared/card_swipe' %>
-  </div>
   <div class="indicator">
     <div class="red">
       <i class='bx bxs-x-circle' ></i>
