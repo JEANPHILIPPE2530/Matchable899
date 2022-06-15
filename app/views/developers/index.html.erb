@@ -21,9 +21,7 @@
           <% end %>
           <div class="card-product-infos">
             <h2><%= developer.first_name %> <%= developer.last_name %></h2>
-            <% developer.skills.each do |s| %>
-              <p><%= s %></p>
-            <% end %>
+            <p><%= developer.skills[1] %></p>
           </div>
         </div>
       <% end %>
