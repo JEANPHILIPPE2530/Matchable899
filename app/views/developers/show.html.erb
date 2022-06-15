@@ -1,6 +1,8 @@
-<%# <div class="phone"> %>
-  <%# @developer.first_name %>
-<%# </div> %>
-
+<div class="page-container">
+  <div>
     <%= render 'shared/developer/myprofile' %>
-
+  </div>
+  <div class="back-button-container">
+    <%=  link_to "Back", developers_path, class: "back-button" %><br />
+  </div>
+</div>
