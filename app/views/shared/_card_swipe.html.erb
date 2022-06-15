@@ -73,15 +73,15 @@
         </div>
     </div>
     <% end %>
+    <div class="d-none" >
+        <%= simple_form_for([@developer, @matches], 
+                            data: {swiped_target: "form",
+                            }) do |f| %>
+            <%= f.text_field :company_id, input_html: { value: "" }, data: { swiped_target: "form" } %>
+            <%= f.button :submit %>
+        <% end %>
+    </div>
 <% end %>
-<div class="d-none" >
-    <%= simple_form_for([@developer, @matches], 
-                        data: {swiped_target: "form",
-                        }) do |f| %>
-        <%= f.text_field :company_id, input_html: { value: "" }, data: { swiped_target: "form" } %>
-        <%= f.button :submit %>
-    <% end %>
-</div>
 <%# <!-- profile 2 -->
         <div class="profile" data-swipe-target="profile">
             <div class="card-header">
