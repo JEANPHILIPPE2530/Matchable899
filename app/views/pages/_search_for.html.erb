@@ -1,3 +1,4 @@
+<div class="page-container">
   <% if @user.role == "developer" %>
     <div class="fade-in">
       <h1 class="welcome-h1">Hello, <%= @developer.first_name %>!</h1>
@@ -20,3 +21,4 @@
       <%= link_to "Browse developers", developers_path, class: "choice-button" %>
     </div>
   <% end %>
+</div>

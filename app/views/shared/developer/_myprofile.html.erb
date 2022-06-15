@@ -4,7 +4,7 @@
         <% if @developer.photo.attached? %>
           <%= cl_image_tag @developer.photo.key, class: "myprofile-avatar"  %>
         <% end %>
-        <h1 class="myprofile-fullname"> <%= @developer.first_name %> <%= @developer.last_name %></h1>
+        <h2 class="myprofile-fullname"> <%= @developer.first_name %> <%= @developer.last_name %></h2>
         <h2 class="myprofile-jobtitle">Developer</h2>
     </div>
     <div class="myprofile-frame">
