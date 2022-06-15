@@ -23,7 +23,7 @@
 max-width: 320px;
 margin: auto;
 position: relative;
-overflow-x: hidden; 
+overflow-x: hidden;
 background-color: white;
 border-radius: 12px;
 box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2);
@@ -187,7 +187,7 @@ fill: #637faa;
     border-radius: 4px;
     /* transform:rotate(24deg); */
     opacity: 45%;
-} 
+}
 
 .profile--nexting::after {
     content: 'NEXT';
@@ -203,4 +203,9 @@ fill: #637faa;
     border-radius: 4px;
     /* transform:rotate(24deg); */
     opacity: 45%;
+}
+
+#profiles {
+  display: flex;
+  justify-content: center;
 }
