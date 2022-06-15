@@ -1,0 +1,6 @@
+<div class="message-box">
+ <%= simple_form_for [@chatroom, @message], remote: true do |f| %>
+    <%= f.input :content, input_html: { placeholder: "Type a message..."}, label: false, class: "message-input" %>
+    <%= f.button :submit, class: "message-submit" %>
+  <% end %>
+</div>

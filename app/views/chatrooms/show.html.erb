@@ -1,12 +1,35 @@
-<div class="container chatroom">
-    <div class="messages"
+<div class="chat">
+  <div class="header">
+    <% if @user.role == "developer" %>
+      <h1><%= @match.company.name %></h1>
+      <h2>Company</h2>
+      <div class="avatar">
+        <% if @match.company.photo.attached? %>
+          <%= cl_image_tag @match.company.photo.key %>
+        <% else %>
+          <%= image_tag("default-company") %>
+        <% end %>
+      </div>
+    <% elsif @user.role == "company" %>
+      <h1><%= @match.developer.name %></h1>
+      <h2><%= @match.developer.skills[1] %></h2>
+      <div class="avatar">
+        <% if @match.developer.photo.attached? %>
+          <%= cl_image_tag @match.developer.photo.key %>
+        <% else %>
+          <%= image_tag("default-img") %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="messages"
     data-controller="chatroom-subscription"
     data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
         <% @chatroom.messages.each do |message| %>
             <%= render 'messages/message', message: message %>
         <% end %>
-    </div>
-    <%= simple_form_for [@chatroom, @message], remote: true do |f| %>
-        <%= f.input :content, label: false %>
-    <% end %>
+  </div>
+
+    <%= render "messages/new_message" %>
 </div>
