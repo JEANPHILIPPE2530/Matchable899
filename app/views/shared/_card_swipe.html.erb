@@ -32,7 +32,7 @@
     </div>
     <% end %>
 <div class="d-none" >
-    <%= simple_form_for([@company, @matches], 
+    <%= simple_form_for([@company, @matches],
                         data: {swipe_target: "form",
                         }) do |f| %>
         <%= f.text_field :developer_id, input_html: { value: "" }, data: { swipe_target: "form" } %>
@@ -74,13 +74,13 @@
     </div>
     <% end %>
     <div class="d-none" >
-        <%= simple_form_for([@developer, @matches], 
-                            data: {swiped_target: "form",
-                            }) do |f| %>
+        <%= simple_form_for([@developer, @matches],
+                            data: {swiped_target: "form"
+                            } ) do |f| %>
             <%= f.text_field :company_id, input_html: { value: "" }, data: { swiped_target: "form" } %>
             <%= f.button :submit %>
         <% end %>
-    </div>
+     </div>
 <% end %>
 <%# <!-- profile 2 -->
         <div class="profile" data-swipe-target="profile">

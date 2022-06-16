@@ -1,5 +1,5 @@
 import '../plugins/hammer.min.js'
-import { csrfToken } from "@rails/ujs"
+// import { csrfToken } from "@rails/ujs"
 
 import { Controller } from "stimulus"
 
@@ -18,10 +18,10 @@ export default class extends Controller {
 
         // let profiles = document.querySelectorAll('.profile');
         // console.log(this.profileTargets)
-        
+
         const setupDragAndDrop = (p) => {
             const hammertime = new Hammer(p);
-            
+
             hammertime.on('pan', function (cardProfile) {
                 p.classList.remove('profile--back');
                 let posX = cardProfile.deltaX;
@@ -30,7 +30,7 @@ export default class extends Controller {
                 if (cardProfile.deltaX < 0) {
                 angle *= -1;
             }
-            
+
             p.style.transform = `translateX(${posX}px) translateY(${posY}px) rotate(${angle}deg)`;
             p.classList.remove('profile--matching');
             p.classList.remove('profile--nexting');
@@ -39,13 +39,13 @@ export default class extends Controller {
             } else if (posX < -thresholdMatch) {
                 p.classList.add('profile--nexting');
             }
-            
+
             if (cardProfile.isFinal) {
                 p.style.transform = ``;
                 if (posX > thresholdMatch) {
                     p.classList.add('profile--match');
                     // console.log(p.innerHTML)
-                    
+
                 } else if (posX < -thresholdMatch) {
                     p.classList.add('profile--next');
                 } else {
@@ -56,7 +56,7 @@ export default class extends Controller {
             }
         });
     }
-    
+
     const sendToMatchController =(element) => {
         // console.log(element)
         // console.log(this.formTarget)
@@ -64,7 +64,7 @@ export default class extends Controller {
         const inputForm = document.getElementById('match_developer_id')
         inputForm.value = element
         this.formTarget.submit()
-        
+
 
 // export default class extends Controller {
 //     static targets = ["form"]
@@ -98,14 +98,14 @@ export default class extends Controller {
         //             },
         //             body: JSON.stringify(data)
         //         })
-        
+
     }
 
-                
+
                 this.profileTargets.forEach((p) => setupDragAndDrop(p));
     // window.onbeforeunload = sendToMatchController(myMatchId);
-    
-    
+
+
 }
 
 }
