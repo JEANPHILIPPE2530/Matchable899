@@ -1,0 +1,23 @@
+<div class="modal fade" id="newChatroom" tabindex="-1" role="dialog" aria-labelledby="newChatroomLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      <% if @user.role == "developer" %>
+        <% @company = Company.find(params[:id]) %>
+        <h5 class="modal-title" id="newChatroomLabel">Connect with <%= @company.name %>?</h5>
+      <% elsif @user.role == "company" %>
+        <% @developer = Developer.find(params[:id]) %>
+        <h5 class="modal-title" id="newChatroomLabel">Connect with <%= @developer.name %>?</h5>
+      <% end %>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>

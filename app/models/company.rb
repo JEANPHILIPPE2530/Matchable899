@@ -2,6 +2,7 @@ class Company < ApplicationRecord
   belongs_to :user
   has_many :matches
   has_one_attached :photo
+  has_many :chatrooms
 
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true, length: { minimum: 25 }

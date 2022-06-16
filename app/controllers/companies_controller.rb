@@ -13,6 +13,7 @@ class CompaniesController < ApplicationController
 
   def show
     @company = Company.find(params[:id])
+    @chatroom = Chatroom.new
   end
 
   def new

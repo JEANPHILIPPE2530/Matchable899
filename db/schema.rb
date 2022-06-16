@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_14_070128) do
+ActiveRecord::Schema.define(version: 2022_06_16_102812) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,10 +44,12 @@ ActiveRecord::Schema.define(version: 2022_06_14_070128) do
   end
 
   create_table "chatrooms", force: :cascade do |t|
-    t.bigint "match_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["match_id"], name: "index_chatrooms_on_match_id"
+    t.bigint "company_id"
+    t.bigint "developer_id"
+    t.index ["company_id"], name: "index_chatrooms_on_company_id"
+    t.index ["developer_id"], name: "index_chatrooms_on_developer_id"
   end
 
   create_table "companies", force: :cascade do |t|
@@ -125,7 +127,8 @@ ActiveRecord::Schema.define(version: 2022_06_14_070128) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "chatrooms", "matches"
+  add_foreign_key "chatrooms", "companies"
+  add_foreign_key "chatrooms", "developers"
   add_foreign_key "companies", "users"
   add_foreign_key "developers", "users"
   add_foreign_key "matches", "companies"

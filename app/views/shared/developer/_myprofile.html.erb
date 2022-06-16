@@ -75,7 +75,18 @@
                         <path d="M22 6l-10 7L2 6"></path></svg>
                         <%= @developer.github %>
                     </div>
-                    <button class="contact-me">WORK TOGETHER</button>
+                    <div>
+                      <% if current_user != @developer.user %>
+                        <% @existingchatroom = Chatroom.find_by(developer_id: @developer.id, company_id: current_user.company.id) %>
+                        <% if @existingchatroom %>
+                          <%= link_to "CHAT WITH ME", chatroom_path(@existingchatroom), class: "contact-me" %>
+                        <% else %>
+                          <%= simple_form_for [@developer, @chatroom] do |f| %>
+                            <%= f.button :submit, value: "WORK TOGETHER", class: "contact-me" %>
+                          <% end %>
+                        <% end %>
+                      <% end %>
+                    </div>
                 </div>
             </div>
         </div>
