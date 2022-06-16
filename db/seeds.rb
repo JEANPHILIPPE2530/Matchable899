@@ -596,12 +596,12 @@ match_4 = Match.new({
 })
 match_4.save
 
-chatroom_1 = Chatroom.new({
-  match_id: match_1.id,
-})
-chatroom_1.save
+# chatroom_1 = Chatroom.new({
+#   # match_id: match_1.id,
+# })
+# chatroom_1.save
 
-chatroom_2 = Chatroom.new({
-  match_id: match_2.id,
-})
-chatroom_2.save
+# chatroom_2 = Chatroom.new({
+#   # match_id: match_2.id,
+# })
+# chatroom_2.save
