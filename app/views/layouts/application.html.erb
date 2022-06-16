@@ -6,7 +6,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-      <title><%= meta_title %></title>
+    <title><%= meta_title %></title>
+    <%= favicon_link_tag %>
     <meta name="description" content="<%= meta_description %>">
 
     <!-- Facebook Open Graph data -->
@@ -41,11 +42,7 @@
     <script src="https://kit.fontawesome.com/0c87a70838.js"></script>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
-
-    <%# Favicon link tag %>
-    <%= favicon_link_tag %>
-
+    <%= javascript_pack_tag 'application', 'data-turbolinks-eval' => false, 'data-turbolinks-track': 'reload', defer: true %>
 
 
   </head>

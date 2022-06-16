@@ -1,5 +1,5 @@
 import '../plugins/hammer.min.js'
-import { csrfToken } from "@rails/ujs"
+// import { csrfToken } from "@rails/ujs"
 
 import { Controller } from "stimulus"
 
@@ -17,7 +17,7 @@ export default class extends Controller {
 
         const setupDragAndDrop = (prD) => {
             const hammertime = new Hammer(prD);
-            
+
             hammertime.on('pan', function (cardProfile) {
                 prD.classList.remove('profile--back');
                 let posX = cardProfile.deltaX;
@@ -26,7 +26,7 @@ export default class extends Controller {
                 if (cardProfile.deltaX < 0) {
                 angle *= -1;
             }
-            
+
             prD.style.transform = `translateX(${posX}px) translateY(${posY}px) rotate(${angle}deg)`;
             prD.classList.remove('profile--matching');
             prD.classList.remove('profile--nexting');
@@ -35,7 +35,7 @@ export default class extends Controller {
             } else if (posX < -thresholdMatch) {
                 prD.classList.add('profile--nexting');
             }
-            
+
             if (cardProfile.isFinal) {
                 prD.style.transform = ``;
                 if (posX > thresholdMatch) {
@@ -47,15 +47,18 @@ export default class extends Controller {
                 }
                 const devIdMatchEl = document.querySelectorAll('.profile--match .card-comp-id')
                 devIdMatchEl.forEach(el => sendToMatchController(el.innerText))
+                // sendToMatchController.catch((error) => {console.log(error)})
             }
         });
     }
-    
-    const sendToMatchController =(element) => {
+
+    let sendToMatchController =(element) => {
         console.log(element)
+        element.preventDefault()
         const inputForm = document.getElementById('match_company_id')
         inputForm.value = element
         this.formTarget.submit()
+        console.log(element)
     }
 
     this.profiledTargets.forEach((prD) => setupDragAndDrop(prD));

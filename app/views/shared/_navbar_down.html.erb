@@ -5,20 +5,20 @@
         <i class='bx bx-globe' style="font-size: 30px;"  ></i>
       </li>
     <% end %>
-  <!-- heart -->
+  <!-- heart
   <a href="#">
       <li class="nav-item p-2 ">
         <i class='bx bx-heart' style="font-size: 30px;" ></i>
       </li>
-  </a>
+  </a> -->
     <!-- Matchable -->
-    <% if @user.role == "company" %>  
+    <% if @user.role == "company" %>
       <%= link_to company_matches_path(@company) do %>
           <li class="nav-item p-2 ">
             <i class='bx bxl-gmail' style="font-size: 30px;"></i>
           </li>
       <% end %>
-    <% elsif @user.role == "developer" %>     
+    <% elsif @user.role == "developer" %>
       <%= link_to developer_matches_path(@developer) do %>
           <li class="nav-item p-2 ">
             <i class='bx bxl-gmail' style="font-size: 30px;"></i>
