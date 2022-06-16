@@ -268,7 +268,7 @@ company_10 = Company.new({
     })
     file = URI.open('https://toppng.com/uploads/preview/logo-instagram-png-116177728255ciniqgxmb.png')
     company_5.photo.attach(io: file, filename: 'instagram.png', content_type: 'image/png')
-    company_5.save
+    company_5.save!
     puts "creates Instagram"
 
 
