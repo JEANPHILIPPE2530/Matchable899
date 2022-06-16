@@ -13,6 +13,7 @@ class DevelopersController < ApplicationController
 
   def show
     @developer = Developer.find(params[:id])
+    @chatroom = Chatroom.new
   end
 
   def new
