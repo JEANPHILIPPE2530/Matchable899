@@ -243,19 +243,19 @@ company_9 = Company.new({
   puts "creates Pinterest"
 
 
-company_10 = Company.new({
-  name: "Microsoft",
-  description: "Microsoft is the largest vendor of computer software in the world. It is also a leading provider of cloud computing services, video games, computer and gaming hardware, search and other online services. Microsoft’s corporate headquarters is located in Redmond, Wash., and it has offices in more than 60 countries.",
-  address: "Ebene, Mauritius",
-  website: "www.microsoft.com",
-  zoom: "microsoft.recruit",
-  phone_number: "+900323948",
-  user: manampisoa
-  })
-  file = URI.open('https://e7.pngegg.com/pngimages/359/57/png-clipart-logo-microsoft-corporation-brand-windows-server-2016-windows-xp-intellect-angle-text-thumbnail.png')
-  company_10.photo.attach(io: file, filename: 'microsoft.png', content_type: 'image/png')
-  company_10.save
-  puts "creates Microsoft"
+# company_10 = Company.new({
+#   name: "Microsoft",
+#   description: "Microsoft is the largest vendor of computer software in the world. It is also a leading provider of cloud computing services, video games, computer and gaming hardware, search and other online services. Microsoft’s corporate headquarters is located in Redmond, Wash., and it has offices in more than 60 countries.",
+#   address: "Ebene, Mauritius",
+#   website: "www.microsoft.com",
+#   zoom: "microsoft.recruit",
+#   phone_number: "+900323948",
+#   user: manampisoa
+#   })
+#   file = URI.open('https://e7.pngegg.com/pngimages/359/57/png-clipart-logo-microsoft-corporation-brand-windows-server-2016-windows-xp-intellect-angle-text-thumbnail.png')
+#   company_10.photo.attach(io: file, filename: 'microsoft.png', content_type: 'image/png')
+#   company_10.save
+#   puts "creates Microsoft"
 
   company_5 = Company.new({
     name: "Instagram",
