@@ -487,7 +487,7 @@ developer_10 = Developer.new({
 developer_13 = Developer.new({
       first_name: "Yeshna",
       last_name: "Domah",
-      biography: "The founder of Stark Enterprise and Freelancer for Web Dev Jobs for 15years. Interested in Jobs in Mauritius.",
+      biography: "Qualified web student with various web development certificates. Interested in Jobs in Mauritius.",
       phone_number: "+123456789",
       address: "St Pierre, Mauritius",
       website: "www.stark.com",
