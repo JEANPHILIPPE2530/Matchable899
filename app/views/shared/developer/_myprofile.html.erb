@@ -75,7 +75,7 @@
                         <path d="M22 6l-10 7L2 6"></path></svg>
                         <%= @developer.github %>
                     </div>
-                    <div>
+                    <div class="chat-with">
                       <% if current_user != @developer.user %>
                         <% @existingchatroom = Chatroom.find_by(developer_id: @developer.id, company_id: current_user.company.id) %>
                         <% if @existingchatroom %>

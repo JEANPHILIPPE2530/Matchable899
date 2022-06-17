@@ -56,7 +56,7 @@
             <path d="M22 6l-10 7L2 6"></path></svg>
             <%= @company.zoom %>
           </div>
-          <div>
+          <div class="chat-with">
             <% if current_user != @company.user %>
               <% @existingchatroom = Chatroom.find_by(company_id: @company.id, developer_id: current_user.developer.id) %>
               <% if @existingchatroom %>
