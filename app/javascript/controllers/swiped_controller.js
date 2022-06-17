@@ -46,7 +46,7 @@ export default class extends Controller {
                     prD.classList.add('profile--back');
                 }
                 const devIdMatchEl = document.querySelectorAll('.profile--match .card-comp-id')
-                devIdMatchEl.forEach(el => sendToMatchController(el.innerText))
+                // devIdMatchEl.forEach(el => sendToMatchController(el.innerText))
                 // sendToMatchController.catch((error) => {console.log(error)})
             }
         });
