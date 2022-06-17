@@ -52,7 +52,7 @@ export default class extends Controller {
                     p.classList.add('profile--back');
                 }
                 const devIdMatchEl = document.querySelectorAll('.profile--match .card-dev-id')
-                devIdMatchEl.forEach(el => sendToMatchController(el.innerText))
+                // devIdMatchEl.forEach(el => sendToMatchController(el.innerText))
             }
         });
     }
