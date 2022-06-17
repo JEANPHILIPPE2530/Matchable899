@@ -58,7 +58,7 @@ require "open-uri"
 puts "Creating 5 company"
 company_1 = Company.new({
     name: "Orange",
-    description: "Orange SA is a telecommunication services company, which operates mobile and internet services. It provides telecommunication services to multinational companies, under the brand Orange Business Services. The company was founded in 1794 and is headquartered in Paris, France.",
+    description: "Orange SA is a telecommunication services company, which operates mobile and internet services.",
     address: "Ebene, Mauritius",
     website: "www.orange.com",
     zoom: "orange.recruit",
@@ -72,7 +72,7 @@ company_1 = Company.new({
 
 company_2 = Company.new({
      name: "SD Worx (Mauritius) Limited",
-     description: "Established in 2000, SD Worx Mauritius has earned its position as an Employer of Choice, acting as a delivery centre, servicing all the business units within the SD Worx Group.Our Mauritius office serves the UK, US, Canada and South Africa’s markets, and it is a recognised thought leader in the Mauritius IT-BPO industry. Over the years, SD Worx Mauritius has improved its visibility and strengthened its employer brand, and has received 15 awards between 2011-2014.",
+     description: "Established in 2000, SD Worx Mauritius has earned its position as an Employer of Choice, acting as a delivery centre, servicing all the business units within the SD Worx Group. It is a recognised thought leader in the Mauritius IT-BPO industry.",
      address: "Ebene, Mauritius",
      website: "www.sd_worx.com",
      zoom: "sd_worx.recruit",
@@ -90,7 +90,7 @@ puts "creates Sd Worx"
 
 company_3 = Company.new({
     name: "Checkout",
-    description: "Checkout.com is an international financial technology company which processes payments for other companies. Founded as Opus Payments in 2009, it is headquartered in London, United Kingdom. It had a valuation of $40 billion in 2022, making it the most valuable European fintech startup.",
+    description: "Checkout.com is an international financial technology company which processes payments for other companies. Founded as Opus Payments in 2009, it is headquartered in London, United Kingdom.",
     address: "Ebene, Mauritius",
    website: "www.checkout.com",
     zoom: "checkout.recruit",
@@ -119,7 +119,7 @@ company_4 = Company.new({
 
 company_5 = Company.new({
   name: "Accenture",
-  description: "Accenture Strategy and Consulting provides business strategy, technology strategy, operations strategy services, as well as technology, business and management consulting services. Accenture Song (formerly Digital and Interactive) provides digital marketing, analytics and mobility services.",
+  description: "Accenture Strategy and Consulting provides business strategy, technology strategy, operations strategy services, as well as technology, business and management consulting services.",
   address: "Port Louis, Mauritius",
   website: "www.accenture.com",
   zoom: "accenture.recruit",
