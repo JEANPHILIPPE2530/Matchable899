@@ -65,7 +65,7 @@ company_1 = Company.new({
     phone_number: "+123456789",
     user: bruce_wayne
     })
-    file = URI.open('https://download.logo.wine/logo/Orange_Business_Services/Orange_Business_Services-Logo.wine.png')
+    file = URI.open('https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fencrypted-tbn0.gstatic.com%2Fimages%3Fq%3Dtbn%3AANd9GcSKz2BZXAnoMCIfRzyQ7l9Ru6ISH2tkQbDuAKCfCu-cA5TLGljPmNuUW_GkbJMKKD0oVkM%26usqp%3DCAU')
     company_1.photo.attach(io: file, filename: 'orange.png', content_type: 'image/png')
     company_1.save
     puts "creates Orange"
@@ -79,7 +79,7 @@ company_2 = Company.new({
      phone_number: "+123456789",
      user: tony_stark
      })
-     file = URI.open('https://d1pt6w2mt2xqso.cloudfront.net/AcuCustom/Sitename/DAM/034/SDWorxDirectory.png')
+     file = URI.open('https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F1377315723643609089%2FcVsV9Pou_400x400.jpg')
      company_2.photo.attach(io: file, filename: 'sd_worx.png', content_type: 'image/png')
      company_2.save
      # photo: "app/assets/images/slack_logo.png"
@@ -97,13 +97,9 @@ company_3 = Company.new({
     phone_number: "+123456789",
     user: lorene
     })
-    file = URI.open('https://brc.org.uk/media/677836/checkout.png')
+    file = URI.open('https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fmedia-exp1.licdn.com%2Fdms%2Fimage%2FC4D0BAQG7ZMapBfYqRQ%2Fcompany-logo_200_200%2F0%2F1626262589046%3Fe%3D2147483647%26v%3Dbeta%26t%3DVu813miwME-dTxXwDMZx7az__lxRjlQju3Bp3BXKd9o')
     company_3.photo.attach(io: file, filename: 'checkout.png', content_type: 'image/png')
     company_3.save
-#     # photo: "app/assets/images/dropbox_logo.png"
-# }
-# )
-# company_3.photo.attach(io: URI.open('upload/dropbox_logo.png'), filename: "dropbox_logo.png", content_type: "image/png")
 puts "creates Checkout"
 
 company_4 = Company.new({
@@ -115,7 +111,7 @@ company_4 = Company.new({
      phone_number: "+123456789",
      user: nad
      })
- file = URI.open('https://www.logolynx.com/images/logolynx/4c/4c00207224567ebc49830fa81d2e3ae6.png')
+ file = URI.open('https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fd2q79iu7y748jz.cloudfront.net%2Fs%2F_squarelogo%2F6d5c1fbe30d293efa9e15d130426d334')
  company_4.photo.attach(io: file, filename: 'ceridian.png', content_type: 'image/png')
  company_4.save
  puts "creates Ceridian"
@@ -130,38 +126,23 @@ company_5 = Company.new({
   phone_number: "+74986234",
   user: auguste
   })
-  file = URI.open('https://a.mktgcdn.com/p/aabZBFl5hWO3xqTmrN3uckLYDXLZJGHzr8SD4z5Phdg/2000x2000.png')
-  company_5.photo.attach(io: file, filename: 'accenture.png', content_type: 'image/png')
+
+  file = URI.open('https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fwww.accenture.com%2Ft20200701T040724Z__w__%2Fus-en%2F_acnmedia%2FAccenture%2FRedesign-Assets%2FDotCom%2FImages%2FGlobal%2FHero%2F12%2FAccenture-Logo-768x768.jpg')
+  company_5.photo.attach(io: file, filename: 'whatsapp.png', content_type: 'image/png')
   company_5.save
-  puts "creates Accenture"
-
-
-
-# )
-# company_4.photo.attach(io: URI.open('upload/github_logo.png'), filename: "github_logo.png", content_type: "image/png")
-
-# Developer.create([
-#     {
-
-# }
-# )
-# developer_1.photo.attach(io: URI.open('upload/harry_potter.jpg'), filename: "harry_potter.jpg", content_type: "image/jpg")
-
-#     # photo: "app/assets/images/tony_stark.jpg"
-# )
-# developer_2.photo.attach(io: URI.open('upload/tony_stark.jpg'), filename: "tony_stark.jpg", content_type: "image/jpg")
+  puts "creates Whatsapp"
 
 
 developer_1 = Developer.new({
     first_name: "Jean Philippe",
     last_name: "Auguste",
-    biography: "I am also a freelance Back End Developer based in Mauritius, searching a job as full-time back-end developer.",
+    biography: "I am also a freelance Product Designer based in Mauritius, searching a job as full-time Product Designer.",
     phone_number: "+123456789",
     address: "Port Louis, Mauritius",
     website: "www.wayne.com",
     zoom: "wayne",
     github: "bwayne",
-    skills: ["Back-End Developer"],
+    skills: ["Product Designer"],
     user: jean_philippe_auguste
     })
     file = URI.open('https://ca.slack-edge.com/T02NE0241-U03B0LANLEQ-09cffd6aeee8-512')
@@ -196,7 +177,7 @@ developer_3 = Developer.new({
     website: "www.stephanie.com",
     zoom: "stephanie",
     github: "stephanie",
-    skills: ["Back-End Developer"],
+    skills: ["Web Designer"],
     user: Stephanie
     })
     file = URI.open('https://ca.slack-edge.com/T02NE0241-U03BE6TPQE8-a5dedf26a8ef-512')
@@ -225,13 +206,13 @@ developer_4 = Developer.new({
 developer_5 = Developer.new({
     first_name: "Lorene",
     last_name: "Manampisoa",
-    biography: "I am the owner of Manampisoa Enterprise an international web development firm. I am also a freelance Back End Developer based in Mauritius.",
+    biography: "I am the owner of Manampisoa Enterprise an international web development firm. I am also a freelance Full-Stack Developer based in Mauritius.",
     phone_number: "+98376225",
     address: "Grand Baie, Mauritius",
     website: "www.lorene.com",
     zoom: "lorene",
     github: "lorene",
-    skills: ["Front-End Developer"],
+    skills: ["Full-Stack Developer"],
     user: lorene
     })
     file = URI.open('https://ca.slack-edge.com/T02NE0241-U03B57W70KG-6fba6d4e12ec-512')
@@ -239,13 +220,7 @@ developer_5 = Developer.new({
     developer_5.save
     puts "creates lorene"
 
-# # ])
-# #     # photo: "app/assets/images/james_bond.jpeg"
-# # }
-# # )
-# # developer_4.photo.attach(io: URI.open('upload/james_bond.jpeg'), filename: "james_bond.jpeg", content_type: "image/jpeg")
 
-#developer_4.photo.attach(io: URI.open('upload/james_bond.jpeg'), filename: "james_bond.jpeg", content_type: "image/jpeg")
 
 match_1 = Match.new({
   developer_id: developer_4.id,
@@ -258,37 +233,3 @@ match_2 = Match.new({
   company_id: company_1.id,
 })
 match_2.save
-
-#match_3 = Match.new({
-  #developer_id: developer_3.id,
-  #company_id: company_4.id,
-#})
-#match_3.save
-
-# match_3 = Match.new({
-#   developer_id: developer_3.id,
-#   company_id: company_1.id,
-# })
-# match_3.save
-
-# match_4 = Match.new({
-#   developer_id: developer_5.id,
-#   company_id: company_2.id,
-# })
-# match_4.save
-
-# match_4 = Match.new({
-#   developer_id: developer_5.id,
-#   company_id: company_5.id,
-# })
-# match_4.save
-
-chatroom_1 = Chatroom.new({
-  match_id: match_1.id,
-})
-chatroom_1.save
-
-chatroom_2 = Chatroom.new({
-  match_id: match_2.id,
-})
-chatroom_2.save

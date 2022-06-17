@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   # end
 
   def set_user
-    if user_signed_in?
+    if current_user
       @user = current_user
       @company = @user.company if @user.role == "company"
       @developer = @user.developer if @user.role == "developer"

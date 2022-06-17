@@ -1,11 +1,40 @@
 <div class="page-container">
-    <div>
-    <% @chatrooms.each do |chat| %>
-     <% if @user.role == "developer" %>
-      <%= link_to chat.match.company.name, chatroom_path(chat) %>
-      <% elsif @user.role == "company" %>
-        <%= link_to chat.match.developer.name, chatroom_path(chat) %>
+    <% @chatrooms.each do |chatroom| %>
+      <% if chatroom %>
+        <%= link_to chatroom_path(chatroom) do %>
+          <div class="card-product">
+            <% if current_user.role == "company" %>
+              <% if chatroom.developer.photo.attached? %>
+                <%= cl_image_tag chatroom.developer.photo.key %>
+              <% else %>
+                <%= image_tag("default-img") %>
+              <% end %>
+              <div class="card-product-infos">
+                <h2><%= chatroom.developer.name %></h2>
+                <p>sent you a message!</p>
+              </div>
+            <% elsif current_user.role == "developer" %>
+              <% if chatroom.company.photo.attached? %>
+                <%= cl_image_tag chatroom.company.photo.key %>
+              <% else %>
+                <%= image_tag("default-company") %>
+              <% end %>
+              <div class="card-product-infos">
+                <h2><%= chatroom.company.name %></h2>
+                <p>sent you a message!</p>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
       <% end %>
     <% end %>
-    </div>
+    <%# <% @matches.each do |match| %>
+      <%# if match.chatroom %>
+        <%# if @user.role == "developer" %>
+        <%# link_to match.company.name, chatroom_path(match.chatroom.id) %>
+        <%# elsif @user.role == "company" %>
+          <%# link_to match.developer.name, chatroom_path(match.chatroom.id) %>
+        <%# end %>
+        <%# end %>
+    <%# end %>
 </div>

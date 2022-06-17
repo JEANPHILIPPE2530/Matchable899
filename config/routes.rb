@@ -10,15 +10,17 @@ Rails.application.routes.draw do
 
   resources :companies, only: %i[index show new create] do
     resources :matches, only: %i[index create]
+    resources :chatrooms, only: :create
 
   end
   resources :offers, only: %i[edit update destroy]
 
   resources :developers do
     resources :matches, only: %i[index create]
+    resources :chatrooms, only: :create
   end
 
-  resources :chatrooms, only: %i[index show] do
+  resources :chatrooms, only: %i[index show new] do
     resources :messages, only: :create
   end
 

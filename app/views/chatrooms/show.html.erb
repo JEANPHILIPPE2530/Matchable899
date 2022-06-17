@@ -1,21 +1,21 @@
 <div class="chat">
   <div class="header">
     <% if @user.role == "developer" %>
-      <h1><%= @match.company.name %></h1>
+      <h1><%= @company.name %></h1>
       <h2>Company</h2>
       <div class="avatar">
-        <% if @match.company.photo.attached? %>
-          <%= cl_image_tag @match.company.photo.key %>
+        <% if @company.photo.attached? %>
+          <%= cl_image_tag @company.photo.key %>
         <% else %>
           <%= image_tag("default-company") %>
         <% end %>
       </div>
     <% elsif @user.role == "company" %>
-      <h1><%= @match.developer.name %></h1>
-      <h2><%= @match.developer.skills[1] %></h2>
+      <h1><%= @developer.name %></h1>
+      <h2><%= @developer.skills[1] %></h2>
       <div class="avatar">
-        <% if @match.developer.photo.attached? %>
-          <%= cl_image_tag @match.developer.photo.key %>
+        <% if @developer.photo.attached? %>
+          <%= cl_image_tag @developer.photo.key %>
         <% else %>
           <%= image_tag("default-img") %>
         <% end %>

@@ -56,7 +56,18 @@
             <path d="M22 6l-10 7L2 6"></path></svg>
             <%= @company.zoom %>
           </div>
-          <button class="contact-me">JOIN US</button>
+          <div>
+            <% if current_user != @company.user %>
+              <% @existingchatroom = Chatroom.find_by(company_id: @company.id, developer_id: current_user.developer.id) %>
+              <% if @existingchatroom %>
+                <%= link_to "CHAT WITH US", chatroom_path(@existingchatroom), class: "contact-me" %>
+              <% else %>
+                <%= simple_form_for [@company, @chatroom] do |f| %>
+                  <%= f.button :submit, value: "JOIN US", class: "contact-me" %>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
