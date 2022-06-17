@@ -1,9 +1,9 @@
 class ChatroomsController < ApplicationController
   def index
     if @user.role == "developer"
-      @chatrooms = @user.developer.chatrooms
+      @chatrooms = @user.developer.chatrooms.order('created_at DESC')
     elsif @user.role == "company"
-      @chatrooms = @user.company.chatrooms
+      @chatrooms = @user.company.chatrooms.order('created_at DESC')
     end
   end
 
